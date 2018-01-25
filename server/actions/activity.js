@@ -2,6 +2,7 @@
 const Activity = require('../models/Activity');
 const mongoose = require('mongoose');
 //Create an activity
+//@method:POST
 //@body:name,content,summary,endTime
 //@return:JSON Object
 createActivity = (req,res)=>{
@@ -23,6 +24,7 @@ createActivity = (req,res)=>{
     })
 };
 //Fetch activity by limit and page no.
+//@method:GET
 //@query: page,limit
 //@return: JSON Object w/ Embed Array
 fetchActivity = (req,res)=>{
@@ -44,6 +46,7 @@ fetchActivity = (req,res)=>{
     })
 };
 //Return Activity detail
+//@method:GET
 //@query: uid
 //@return: JSON Object
 viewActivity = (req,res)=>{
@@ -72,7 +75,30 @@ viewActivity = (req,res)=>{
         }
     })
 };
+//Delete Activity
+//@method:DELETE
+//@body:uid
+//@return:JSON Object
+deleteActivity = (req,res)=>{
+    "use strict";
+    Activity.remove({
+        _id:mongoose.Types.ObjectId(req.body.uid)
+    },(err,docs)=>{
+        if(err){
+            res.status(500).json({
+                success:false,
+                response:err
+            })
+        }else{
+                res.status(200).json({
+                    success:true,
+                    response:docs
+                })
+        }
+    })
+};
 //Export Actions module
 module.exports.createActivity = createActivity;
 module.exports.fetchActivity = fetchActivity;
 module.exports.viewActivity = viewActivity;
+module.exports.deleteActivity = deleteActivity;

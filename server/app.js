@@ -9,6 +9,8 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 var activity = require('./routes/activity');
 var works = require('./routes/works');
+var funding = require('./routes/funding');
+
 var app = express();
 
 //Init Express Server
@@ -22,6 +24,9 @@ app.use('/', index);
 app.use('/activity',activity);
 app.use('/users', users);
 app.use('/work',works);
+app.use('/funding',funding);
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

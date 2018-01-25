@@ -1,9 +1,9 @@
-## 星之海 海外版API
+## Starrysea International API
 
 This is starrysea International Ver. API Documentation
 
 API主机地址: api.starrysea.org
 
-封面静态文件地址: api.starrysea.org/static/img/activity/
+活动静态文件地址: api.starrysea.org/static/activity/
 
-PDF静态文件地址: api.starrysea.org/static/pdf/
+作品静态文件地址: api.starrysea.org/static/work/

@@ -101,3 +101,27 @@ GET /activity/detail?uid={对象ID}
   }
 }
 ```
+
+### 按对象ID删除作品
+
+按对象ID删除活动 **需要管理员权限**
+
+```endpoint
+DELETE /work/delete
+```
+
+属性 | 介绍
+---|---
+`uid` | (必填) 对象ID
+
+#### Example response
+
+```json
+{
+    "success": true,
+    "response": {
+        "n": 1,
+        "ok": 1
+    }
+}
+```

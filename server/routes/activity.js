@@ -11,12 +11,14 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage: storage });
 const { checkAdminExpress } = require('../actions/guard');
-const { createActivity,fetchActivity,viewActivity }  = require('../actions/activity');
+const { createActivity,fetchActivity,viewActivity,deleteActivity }  = require('../actions/activity');
 
 router.get('/',fetchActivity);
 
 router.post('/',checkAdminExpress,upload.single('cover'),createActivity);
 
 router.get('/detail',viewActivity);
+
+router.delete('/delete',checkAdminExpress,deleteActivity);
 
 module.exports = router;

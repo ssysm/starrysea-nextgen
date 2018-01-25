@@ -17,12 +17,14 @@ const workUpload = upload.fields([
     { name: 'images', maxCount: 32 }
     ]);
 const { checkAdminExpress } = require('../actions/guard');
-const { createWork,fetchWork,viewWork }  = require('../actions/works');
+const { createWork,fetchWork,viewWork,deleteWork }  = require('../actions/works');
 
 router.get('/',fetchWork);
 
 router.post('/',checkAdminExpress,workUpload,createWork);
 
 router.get('/detail',viewWork);
+
+router.delete('/delete',checkAdminExpress,deleteWork);
 
 module.exports=router;

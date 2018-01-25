@@ -16,5 +16,7 @@ module.exports =
     fs.readFileSync('./content/auth.md','utf8')+'\n'+
   '# 活动\n' +
   fs.readFileSync('./content/activity.md', 'utf8') + '\n'+
+    '# 募捐\n'+
+    fs.readFileSync('./content/funding.md','utf8') + '\n'+
     '# 作品\n'+
     fs.readFileSync('./content/work.md','utf8')+'\n';
