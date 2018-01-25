@@ -10,11 +10,11 @@
     <link href='css/railscasts.css' rel='stylesheet' />
   </head>
   <body>
-    <!--START--><div id='app'><div class="container unlimiter" data-reactroot=""><div class="fixed-top fixed-right space-left16"><div class="fill-light col6 pin-right"></div></div><div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark"><div class="pad0x small"><div class="small pad0x quiet space-top1">简介</div><a href="#星之海-海外版api" class="line-height15 pad0x pad00y quiet block ">星之海 海外版API</a><div class="small pad0x quiet space-top1">验证登陆</div><div class="small pad0x quiet space-top1">活动</div><div class="small pad0x quiet space-top1">作品</div></div></div><div class="space-left16"><div class=""><div class="clearfix"><div data-title="星之海 海外版API" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h2 id="星之海-海外版api">星之海 海外版API</h2>
+    <!--START--><div id='app'><div class="container unlimiter" data-reactroot=""><div class="fixed-top fixed-right space-left16"><div class="fill-light col6 pin-right"></div></div><div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark"><div class="pad0x small"><div class="small pad0x quiet space-top1">简介</div><a href="#starrysea-international-api" class="line-height15 pad0x pad00y quiet block ">Starrysea International API</a><div class="small pad0x quiet space-top1">验证登陆</div><div class="small pad0x quiet space-top1">活动</div><div class="small pad0x quiet space-top1">募捐</div><div class="small pad0x quiet space-top1">作品</div></div></div><div class="space-left16"><div class=""><div class="clearfix"><div data-title="Starrysea International API" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h2 id="starrysea-international-api">Starrysea International API</h2>
 <p>This is starrysea International Ver. API Documentation</p>
 <p>API主机地址: api.starrysea.org</p>
-<p>封面静态文件地址: api.starrysea.org/static/img/activity/</p>
-<p>PDF静态文件地址: api.starrysea.org/static/pdf/</p>
+<p>活动静态文件地址: api.starrysea.org/static/activity/</p>
+<p>作品静态文件地址: api.starrysea.org/static/work/</p>
 </div></div><div data-title="创建一个新的管理员" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="创建一个新的管理员">创建一个新的管理员</h3>
 <p>创建一个新的管理员🆕 <strong>需要管理员权限</strong></p>
 <table>
@@ -170,6 +170,126 @@
     <span class="hljs-attr">"__v"</span>: <span class="hljs-number">0</span>
   }
 }</pre>
+</div></div><div data-title="按对象ID删除活动" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="按对象id删除活动">按对象ID删除活动</h3>
+<p>按对象ID删除活动 <strong>需要管理员权限</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uid</code></td>
+<td>(必填) 对象ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
+      <div class='pad0 code small endpoint-url'>/activity/delete</div>
+    </div>
+<h4 id="example-response-5">Example response</h4>
+<pre class='hljs'>{
+    <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"response"</span>: {
+        <span class="hljs-attr">"n"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"ok"</span>: <span class="hljs-number">1</span>
+    }
+}</pre>
+</div></div><div data-title="添加一个新的募捐记录" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="添加一个新的募捐记录">添加一个新的募捐记录</h3>
+<p>创建一个新的新的募捐记录🆕 <strong>需要管理员权限</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>activity_id</code></td>
+<td>(必填) 活动对象ID</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>(必填) 名字</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>(必填) 金额大小</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>(选填) 消息</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/funding/create</div>
+    </div>
+<h4 id="example-response-6">Example response</h4>
+<pre class='hljs'>{
+    <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"response"</span>: {
+        <span class="hljs-attr">"_id"</span>: <span class="hljs-string">"5a6a5c6c75ba5aed47c1fc0d"</span>,
+        <span class="hljs-attr">"activity_id"</span>: <span class="hljs-string">"5a6a31fe6bf671e8ec965d64"</span>,
+        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"adnj"</span>,
+        <span class="hljs-attr">"amount"</span>: <span class="hljs-number">0.88</span>,
+        <span class="hljs-attr">"message"</span>: <span class="hljs-string">""</span>,
+        <span class="hljs-attr">"__v"</span>: <span class="hljs-number">0</span>
+    }
+}</pre>
+</div></div><div data-title="按活动对象ID获取募捐记录" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="按活动对象id获取募捐记录">按活动对象ID获取募捐记录</h3>
+<p>按活动对象ID获取募捐记录</p>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/funding/activity?activity_id={活动对象ID}</div>
+    </div>
+<h4 id="example-response-7">Example response</h4>
+<pre class='hljs'>{
+    <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"response"</span>: [
+        {
+            <span class="hljs-attr">"_id"</span>: <span class="hljs-string">"5a6a5c6c75ba5aed47c1fc0d"</span>,
+            <span class="hljs-attr">"activity_id"</span>: <span class="hljs-string">"5a6a31fe6bf671e8ec965d64"</span>,
+            <span class="hljs-attr">"name"</span>: <span class="hljs-string">"adnj"</span>,
+            <span class="hljs-attr">"amount"</span>: <span class="hljs-number">0.88</span>,
+            <span class="hljs-attr">"message"</span>: <span class="hljs-string">""</span>,
+            <span class="hljs-attr">"__v"</span>: <span class="hljs-number">0</span>
+        }
+    ]
+}</pre>
+</div></div><div data-title="按对象ID删除募捐记录" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="按对象id删除募捐记录">按对象ID删除募捐记录</h3>
+<p>按对象ID删除募捐记录 <strong>需要管理员权限</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uid</code></td>
+<td>(必填) 对象ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
+      <div class='pad0 code small endpoint-url'>/funding/delete</div>
+    </div>
+<h4 id="example-response-8">Example response</h4>
+<pre class='hljs'>{
+    <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"response"</span>: {
+        <span class="hljs-attr">"n"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"ok"</span>: <span class="hljs-number">1</span>
+    }
+}</pre>
 </div></div><div data-title="创建一个新的作品" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="创建一个新的作品">创建一个新的作品</h3>
 <p>创建一个新的作品🆕 <strong>需要管理员权限</strong></p>
 <p><strong><em>此请求包含</em></strong>大量<strong><em>文件上传，请妥善处理</em></strong></p>
@@ -221,7 +341,7 @@
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
       <div class='pad0 code small endpoint-url'>/work</div>
     </div>
-<h4 id="example-response-5">Example response</h4>
+<h4 id="example-response-9">Example response</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"response"</span>: {
@@ -248,7 +368,7 @@
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
       <div class='pad0 code small endpoint-url'>/work?page={页面数}&limit={限制数量}</div>
     </div>
-<h4 id="example-response-6">Example response</h4>
+<h4 id="example-response-10">Example response</h4>
 <pre class='hljs'>{
     <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"response"</span>: [
@@ -268,7 +388,7 @@
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
       <div class='pad0 code small endpoint-url'>/activity/detail?uid={对象ID}</div>
     </div>
-<h4 id="example-response-7">Example response</h4>
+<h4 id="example-response-11">Example response</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"response"</span>: {
@@ -289,7 +409,35 @@
     <span class="hljs-attr">"__v"</span>: <span class="hljs-number">0</span>
   }
 }</pre>
-</div></div></div></div></div><div class="fixed-top space-left16"><div class="events fill-light bottom-shadow pad1 col6 pin-topright  "><div class="space-right1 small quiet inline">Show examples in:</div><div class="rounded-toggle inline short"><a class="strong active">JS</a></div><div class="fr pad0"><a title="Display as 1 column" style="cursor:pointer" class="icon quiet caret-left pad0 fill-darken0 round"></a></div></div></div><div class="fill-dark dark bottom-shadow fixed-top pad0 width16"><a href="/" class="active space-top1 space-left1 pin-topleft icon round dark pad0 fill-red"></a><div class="strong small pad0
+</div></div><div data-title="按对象ID删除作品" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="按对象id删除作品">按对象ID删除作品</h3>
+<p>按对象ID删除活动 <strong>需要管理员权限</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uid</code></td>
+<td>(必填) 对象ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
+      <div class='pad0 code small endpoint-url'>/work/delete</div>
+    </div>
+<h4 id="example-response-12">Example response</h4>
+<pre class='hljs'>{
+    <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"response"</span>: {
+        <span class="hljs-attr">"n"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"ok"</span>: <span class="hljs-number">1</span>
+    }
+}</pre>
+</div></div></div></div></div><div class="fixed-top space-left16"><div class="events fill-light bottom-shadow pad1 col6 pin-topright  "><div class="space-right1 small quiet inline">Show examples in:</div><div class="rounded-toggle inline short"><a class="strong active">JSON</a></div><div class="fr pad0"><a title="Display as 1 column" style="cursor:pointer" class="icon quiet caret-left pad0 fill-darken0 round"></a></div></div></div><div class="fill-dark dark bottom-shadow fixed-top pad0 width16"><a href="/" class="active space-top1 space-left1 pin-topleft icon round dark pad0 fill-red"></a><div class="strong small pad0
           
           space-left4 line-height15">星之海海外版API文档</div></div></div></div><!--STOP-->
     <script src='bundle.js'></script>

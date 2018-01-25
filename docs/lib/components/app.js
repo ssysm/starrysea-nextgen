@@ -53,9 +53,9 @@ var slug = function slug(title) {
   slugger.reset();return slugger.slug(title);
 };
 
-var languageOptions = [{ title: 'JavaScript',
-  short: 'JS',
-  value: 'javascript' }];
+var languageOptions = [{ title: 'JSON',
+  short: 'JSON',
+  value: 'JSON' }];
 
 var defaultLanguage = languageOptions[0];
 
