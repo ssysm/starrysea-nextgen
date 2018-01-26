@@ -11,6 +11,7 @@ import {DashboardComponent} from "./view/admin/dashboard/dashboard.component";
 import {UserManagementComponent} from "./view/admin/user-management/user-management.component";
 import {ActivityManagementComponent} from "./view/admin/activity-management/activity-management.component";
 import {WorkManagementComponent} from "./view/admin/work-management/work-management.component";
+import {AuthComponent} from "./view/admin/auth/auth.component";
 
 const routes: Routes = [
   {
@@ -49,8 +50,11 @@ const routes: Routes = [
   },
   {
     path:'admin',
-    component:DashboardComponent,
     children:[
+      {
+        path:'',
+        component:DashboardComponent
+      },
       {
         path:'user',
         component:UserManagementComponent
@@ -62,6 +66,10 @@ const routes: Routes = [
       {
         path:'work',
         component:WorkManagementComponent
+      },
+      {
+        path:'auth',
+        component:AuthComponent
       }
     ]
   },

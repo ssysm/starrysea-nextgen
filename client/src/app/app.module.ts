@@ -23,6 +23,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpModule, BrowserXhr} from "@angular/http";
 import {cros} from "./common/cros";
 import { FooterComponent } from './view/partical/footer/footer.component';
+import {AdminGuardService} from "./common/admin-guard.service";
+import { AuthComponent } from './view/admin/auth/auth.component';
 
 
 @NgModule({
@@ -40,7 +42,8 @@ import { FooterComponent } from './view/partical/footer/footer.component';
     UserManagementComponent,
     ActivityManagementComponent,
     WorkManagementComponent,
-    FooterComponent
+    FooterComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +56,7 @@ import { FooterComponent } from './view/partical/footer/footer.component';
     ActivityService,
     FundingService,
     WorkService,
+    AdminGuardService,
     {
     provide: BrowserXhr,
     useClass:cros
