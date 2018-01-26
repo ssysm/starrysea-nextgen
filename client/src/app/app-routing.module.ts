@@ -12,6 +12,8 @@ import {UserManagementComponent} from "./view/admin/user-management/user-managem
 import {ActivityManagementComponent} from "./view/admin/activity-management/activity-management.component";
 import {WorkManagementComponent} from "./view/admin/work-management/work-management.component";
 import {AuthComponent} from "./view/admin/auth/auth.component";
+import {AdminGuardService} from "./common/admin-guard.service";
+import {FundingManagementComponent} from "./view/admin/funding-management/funding-management.component";
 
 const routes: Routes = [
   {
@@ -53,23 +55,33 @@ const routes: Routes = [
     children:[
       {
         path:'',
-        component:DashboardComponent
+        component:DashboardComponent,
+        canActivate:[AdminGuardService]
       },
       {
         path:'user',
-        component:UserManagementComponent
+        component:UserManagementComponent,
+        canActivate:[AdminGuardService]
+
       },
       {
         path:'activity',
-        component:ActivityManagementComponent
+        component:ActivityManagementComponent,
+        canActivate:[AdminGuardService]
       },
       {
         path:'work',
-        component:WorkManagementComponent
+        component:WorkManagementComponent,
+        canActivate:[AdminGuardService]
+      },
+      {
+        path:'funding',
+        component:FundingManagementComponent,
+        canActivate:[AdminGuardService]
       },
       {
         path:'auth',
-        component:AuthComponent
+        component:AuthComponent,
       }
     ]
   },

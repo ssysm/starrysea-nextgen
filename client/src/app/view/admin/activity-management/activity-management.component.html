@@ -1,3 +1,26 @@
-<p>
-  activity-management works!
-</p>
+<div class="container">
+  <form [formGroup]="activityForm" (ngSubmit)="createActivity(f.valid)" #f="ngForm">
+    <div class="form-group">
+      <label for="name">名称</label>
+      <input type="text" name="name" class="form-control" id="name" placeholder="名称" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label for="coverFile">封面图片</label>
+      <input type="file" #fileupload (change)="fileChange(fileupload.files)" accept="image/*" name="cover" class="form-control-file" id="coverFile" formControlName="cover">
+    </div>
+    <div class="form-group">
+      <label for="summary">简介</label>
+      <input type="text" name="summary" class="form-control" id="summary" placeholder="简介" formControlName="summary">
+    </div>
+    <div class="form-group">
+      <label for="content">内容</label>
+      <br>
+      <textarea name="content" id="content" class="form-control" rows="10" style="resize: none" formControlName="content"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="endTime">结束时间</label>
+      <input type="date" name="endTime" id="endTime" formControlName="endTime">
+    </div>
+    <button type="submit" class="btn btn-primary mb-2" *ngIf="activityForm.valid">提交</button>
+  </form>
+</div>
