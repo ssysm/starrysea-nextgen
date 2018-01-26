@@ -58,3 +58,13 @@ typings/
 .env
 
 /.idea/
+/server/public/activity/*.jpeg
+/server/public/activity/*.jpg
+/server/public/activity/*.png
+
+/server/public/work/*.jpeg
+/server/public/work/*.jpg
+/server/public/work/*.png
+/server/public/work/*.jpeg
+/server/public/work/*.jpg
+/server/public/work/*.pdf
