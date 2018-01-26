@@ -1,0 +1,27 @@
+<div class="container" *ngIf="activityData&&fundArr">
+  <div class="title">
+    <p class="h2">{{activityData.name}}</p>
+  </div>
+  <div class="row ">
+    <div class="col-md-7 contentWrap">
+      {{activityData.content}}
+      <img src="{{apiBase+'/static/activity/'+activityData.cover}}" class="img-fluid" alt="">
+    </div>
+    <div class="col-md-5 contentWrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">名称</th>
+            <th scope="col">金额</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let fund of fundArr">
+          <td>{{fund.name}}</td>
+          <td>{{fund.amount}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

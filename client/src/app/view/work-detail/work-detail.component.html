@@ -1,0 +1,22 @@
+<div class="container" *ngIf="workData">
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="{{apiBase+'/static/work/'+workData.file.cover}}" class="img-fluid" alt="">
+    </div>
+    <div class="col-sm-8">
+      <div class="card" style="height: 100%">
+        <div class="card-body text-center">
+          <h3 class="card-title">{{workData.name}}</h3>
+          <p class="card-text">{{workData.summary}}</p>
+          <a href="{{apiBase+'/static/work/'+workData.file.pdf}}" class="btn btn-primary">下载</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row"  *ngFor="let image of workData.file.images">
+    <div class="col-sm-12">
+      <img src="{{apiBase+'/static/work/'+image.filename}}" alt="" class="img-fluid">
+    </div>
+  </div>
+</div>

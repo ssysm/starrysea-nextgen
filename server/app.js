@@ -19,6 +19,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/static',express.static(path.join(__dirname, 'public')));
+//Allow CROS
+app.all('*', function(req, res, next) {
+    console.log(req.get('host'));
+    res.header("Access-Control-Allow-Origin", req.get('origin'));
+    res.header("Access-Control-Allow-Credentials","true");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
+    res.header("Access-Control-Allow-Methods","GET,PUT,POST,DELETE,OPTIONS,PATCH");
+    next();
+});
 //Init Express Routing
 app.use('/', index);
 app.use('/activity',activity);

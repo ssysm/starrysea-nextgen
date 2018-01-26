@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="title">
+    <h2 class="h1">活动众筹</h2>
+  </div>
+  <div class="activity" *ngIf="activityArr">
+    <div class="col-sm-12" *ngFor="let activity of activityArr">
+      <div class="row">
+        <div class="col-sm-2 ">
+          <img class="img-full" src="{{apiBase+'/static/activity/'+activity.cover}}">
+        </div>
+        <div class="col-sm-10 workdetail">
+          <p class="h3 ">{{activity.name}}</p>
+          <p class="p ">{{activity.summary}}</p>
+          <a routerLink="/activity/detail/{{activity._id}}" class="btn btn-primary">了解更多</a>
+        </div>
+      </div>
+    </div>
+    <hr>
+  </div>
+</div>
+<router-outlet></router-outlet>

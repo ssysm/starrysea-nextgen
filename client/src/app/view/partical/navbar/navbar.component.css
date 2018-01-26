@@ -1,0 +1,16 @@
+.navbar{
+  background: url("/assets/img/navbar.jpg") no-repeat fixed;
+  background-size: contain;
+}
+
+@media screen and (min-width: 991px) {
+  .navbar{
+     background: none;
+  }
+
+}
+
+.navbar-logo{
+  height: auto;
+  width: 50px;
+}
