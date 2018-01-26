@@ -25,6 +25,9 @@ import {cros} from "./common/cros";
 import { FooterComponent } from './view/partical/footer/footer.component';
 import {AdminGuardService} from "./common/admin-guard.service";
 import { AuthComponent } from './view/admin/auth/auth.component';
+import {AuthService} from "./service/auth.service";
+import {FileInputAccessorModule} from "file-input-accessor";
+
 
 
 @NgModule({
@@ -55,8 +58,10 @@ import { AuthComponent } from './view/admin/auth/auth.component';
   providers: [
     ActivityService,
     FundingService,
+    AuthService,
     WorkService,
     AdminGuardService,
+    FileInputAccessorModule,
     {
     provide: BrowserXhr,
     useClass:cros
