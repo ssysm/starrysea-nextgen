@@ -28,6 +28,8 @@ export class WorkDetailComponent implements OnInit {
         }else{
           this.router.navigate(['/404'])
         }
+      },error=>{
+        this.router.navigate(['/404'])
       })
   }
 

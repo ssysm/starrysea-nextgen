@@ -6,6 +6,11 @@
   min-width: 100%;
 }
 
+@media screen and (min-height: 958px) {
+  .aq-bg{
+    height: 75vh;
+  }
+}
 
 .intro{
   clear: both;
