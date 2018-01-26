@@ -24,7 +24,7 @@
           <th scope="row">{{work._id}}</th>
           <td><a routerLink="/work/detail/{{work._id}}">{{work.name}}</a></td>
           <td>{{work.summary}}</td>
-          <td><a id="delete-work-{{work._id}}" style="color: red">删除</a></td>
+          <td><a id="delete-work-{{work._id}}" style="color: red" (click)="deleteWork(work._id)">删除</a></td>
         </tr>
         </tbody>
       </table>
@@ -45,7 +45,7 @@
           <th scope="row">{{activity._id}}</th>
           <td><a routerLink="/activity/detail/{{activity._id}}">{{activity.name}}</a></td>
           <td>{{activity.summary}}</td>
-          <td><a id="delete-activity-{{activity._id}}" style="color: red">删除</a></td>
+          <td><a id="delete-activity-{{activity._id}}" style="color: red" (click)="deleteActivity(activity._id)">删除</a></td>
         </tr>
         </tbody>
       </table>
