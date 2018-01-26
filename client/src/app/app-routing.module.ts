@@ -13,6 +13,7 @@ import {ActivityManagementComponent} from "./view/admin/activity-management/acti
 import {WorkManagementComponent} from "./view/admin/work-management/work-management.component";
 import {AuthComponent} from "./view/admin/auth/auth.component";
 import {AdminGuardService} from "./common/admin-guard.service";
+import {FundingManagementComponent} from "./view/admin/funding-management/funding-management.component";
 
 const routes: Routes = [
   {
@@ -71,6 +72,11 @@ const routes: Routes = [
       {
         path:'work',
         component:WorkManagementComponent,
+        canActivate:[AdminGuardService]
+      },
+      {
+        path:'funding',
+        component:FundingManagementComponent,
         canActivate:[AdminGuardService]
       },
       {

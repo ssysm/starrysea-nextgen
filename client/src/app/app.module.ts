@@ -27,6 +27,7 @@ import {AdminGuardService} from "./common/admin-guard.service";
 import { AuthComponent } from './view/admin/auth/auth.component';
 import {AuthService} from "./service/auth.service";
 import {FileInputAccessorModule} from "file-input-accessor";
+import { FundingManagementComponent } from './view/admin/funding-management/funding-management.component';
 
 
 
@@ -46,7 +47,8 @@ import {FileInputAccessorModule} from "file-input-accessor";
     ActivityManagementComponent,
     WorkManagementComponent,
     FooterComponent,
-    AuthComponent
+    AuthComponent,
+    FundingManagementComponent
   ],
   imports: [
     BrowserModule,

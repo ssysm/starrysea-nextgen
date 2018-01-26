@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Http} from "@angular/http";
+import {Http, RequestOptions} from "@angular/http";
 import {environment} from "../../environments/environment";
 
 @Injectable()
@@ -14,5 +14,16 @@ export class FundingService {
       .get(environment.apiBase+'/funding/activity?activity_id='+uid)
   }
 
+  createFundRecord(data){
+    return this.http
+      .post(environment.apiBase+'/funding/create',data)
+  }
+
+  deleteFundRecord(uid:String){
+    return this.http
+        .delete(environment.apiBase+'/funding/delete',new RequestOptions({
+      body: {uid:uid}
+    }))
+  }
 
 }
