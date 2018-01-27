@@ -3,8 +3,7 @@
     <p class="h2">{{activityData.name}}</p>
   </div>
   <div class="row ">
-    <div class="col-md-7 contentWrap">
-      {{activityData.content}}
+    <div class="col-md-7 contentWrap" ><p [innerHTML]="content"></p>
       <img src="{{apiBase+'/static/activity/'+activityData.cover}}" class="img-fluid" alt="">
     </div>
     <div class="col-md-5 contentWrap">

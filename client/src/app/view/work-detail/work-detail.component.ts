@@ -19,12 +19,13 @@ export class WorkDetailComponent implements OnInit {
   workId:string;
   workData:Object;
   apiBase:string = environment.apiBase;
+  content:String;
   ngOnInit() {
     this.workId = this.route.snapshot.params['id'];
     this.workService.getWorkDetail(this.workId)
       .subscribe(data=>{
         if(data.json().success){
-          this.workData = data.json().response
+          this.workData = data.json().response;
         }else{
           this.router.navigate(['/404'])
         }
