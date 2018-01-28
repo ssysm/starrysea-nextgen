@@ -1,8 +1,8 @@
 <div class="container" *ngIf="fundSelectArr">
   <p class="h2">众筹管理</p>
-  <select [(ngModel)]="fundId" (change)="updateFundTable()" class="custom-select activitySelect" *ngFor="let fund of fundSelectArr">
+  <select [(ngModel)]="fundId" (change)="updateFundTable()" class="custom-select activitySelect">
     <option selected value="0">请选择众筹项目</option>
-    <option [value]="fund._id">{{fund.name}}</option>
+    <option  *ngFor="let fund of fundSelectArr" [value]="fund._id">{{fund.name}}</option>
   </select>
   <div class="fundTable" *ngIf="fundArr&&fundId!=0">
     <button class="btn btn-primary" data-toggle="modal" data-value="{{fundId}}" data-target="#addFund">新建众筹人</button>
