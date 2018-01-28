@@ -9,7 +9,7 @@
     "start:docs":"npm start --prefix=docs",
     "dev:server":"npm run dev --prefix=server",
     "build:client":"npm run build --prefix=client",
-    "build:docs" : "npm run build --docs"
+    "build:docs" : "npm run build --prefix=docs"
   },
   "repository": {
     "type": "git",

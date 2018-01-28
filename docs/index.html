@@ -75,6 +75,21 @@
     "success": true
 }
 //Cookie名称:"token"</pre>
+</div></div><div data-title="检测是否已经登陆" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="检测是否已经登陆">检测是否已经登陆</h3>
+<p>检查是否登陆</p>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/users/status</div>
+    </div>
+<h4 id="example-response-2">Example response</h4>
+<pre class='hljs'>{
+    <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"response"</span>: {
+        <span class="hljs-attr">"admin"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"_id"</span>: <span class="hljs-string">"5a6a3adfd63e25e9d989fdbb"</span>,
+        <span class="hljs-attr">"username"</span>: <span class="hljs-string">"admin"</span>
+    }
+}</pre>
 </div></div><div data-title="创建一个新的活动" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="创建一个新的活动">创建一个新的活动</h3>
 <p>创建一个新的活动🆕 <strong>需要管理员权限</strong></p>
 <p><strong><em>此请求包含文件上传，请妥善处理</em></strong></p>
@@ -114,7 +129,7 @@
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
       <div class='pad0 code small endpoint-url'>/activity</div>
     </div>
-<h4 id="example-response-2">Example response</h4>
+<h4 id="example-response-3">Example response</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"response"</span>: {
@@ -136,7 +151,7 @@
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
       <div class='pad0 code small endpoint-url'>/activity?page={页面数}&limit={限制数量}</div>
     </div>
-<h4 id="example-response-3">Example response</h4>
+<h4 id="example-response-4">Example response</h4>
 <pre class='hljs'>{
     <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"response"</span>: [
@@ -154,7 +169,7 @@
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
       <div class='pad0 code small endpoint-url'>/activity/detail?uid={对象ID}</div>
     </div>
-<h4 id="example-response-4">Example response</h4>
+<h4 id="example-response-5">Example response</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"response"</span>: {
@@ -190,7 +205,7 @@
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
       <div class='pad0 code small endpoint-url'>/activity/delete</div>
     </div>
-<h4 id="example-response-5">Example response</h4>
+<h4 id="example-response-6">Example response</h4>
 <pre class='hljs'>{
     <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"response"</span>: {
@@ -230,7 +245,7 @@
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
       <div class='pad0 code small endpoint-url'>/funding/create</div>
     </div>
-<h4 id="example-response-6">Example response</h4>
+<h4 id="example-response-7">Example response</h4>
 <pre class='hljs'>{
     <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"response"</span>: {
@@ -248,7 +263,7 @@
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
       <div class='pad0 code small endpoint-url'>/funding/activity?activity_id={活动对象ID}</div>
     </div>
-<h4 id="example-response-7">Example response</h4>
+<h4 id="example-response-8">Example response</h4>
 <pre class='hljs'>{
     <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"response"</span>: [
@@ -282,7 +297,7 @@
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
       <div class='pad0 code small endpoint-url'>/funding/delete</div>
     </div>
-<h4 id="example-response-8">Example response</h4>
+<h4 id="example-response-9">Example response</h4>
 <pre class='hljs'>{
     <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"response"</span>: {
@@ -341,7 +356,7 @@
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
       <div class='pad0 code small endpoint-url'>/work</div>
     </div>
-<h4 id="example-response-9">Example response</h4>
+<h4 id="example-response-10">Example response</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"response"</span>: {
@@ -368,7 +383,7 @@
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
       <div class='pad0 code small endpoint-url'>/work?page={页面数}&limit={限制数量}</div>
     </div>
-<h4 id="example-response-10">Example response</h4>
+<h4 id="example-response-11">Example response</h4>
 <pre class='hljs'>{
     <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"response"</span>: [
@@ -388,7 +403,7 @@
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
       <div class='pad0 code small endpoint-url'>/activity/detail?uid={对象ID}</div>
     </div>
-<h4 id="example-response-11">Example response</h4>
+<h4 id="example-response-12">Example response</h4>
 <pre class='hljs'>{
   <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">"response"</span>: {
@@ -429,7 +444,7 @@
       <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
       <div class='pad0 code small endpoint-url'>/work/delete</div>
     </div>
-<h4 id="example-response-12">Example response</h4>
+<h4 id="example-response-13">Example response</h4>
 <pre class='hljs'>{
     <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"response"</span>: {

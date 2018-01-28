@@ -75,11 +75,6 @@ const routes: Routes = [
         canActivate:[AdminGuardService]
       },
       {
-        path:'funding',
-        component:FundingManagementComponent,
-        canActivate:[AdminGuardService]
-      },
-      {
         path:'auth',
         component:AuthComponent,
       }
