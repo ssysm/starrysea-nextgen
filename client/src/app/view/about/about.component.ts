@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {VersionService} from "../../service/version.service";
 
 @Component({
   selector: 'app-about',
@@ -7,8 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private versionService:VersionService
+  ) { }
 
+  commit:any;
+  Version:string;
   ngOnInit() {
   }
 
