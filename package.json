@@ -1,6 +1,6 @@
 {
   "name": "starrysea",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "新一代星之海官网",
   "scripts": {
     "test": "echo \"Welcome to Starrysea-NextGen Project!\" && exit 0",
