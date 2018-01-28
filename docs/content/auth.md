@@ -45,3 +45,25 @@ POST /users/login
 }
 //Cookie名称:"token"
 ```
+
+### 检测是否已经登陆
+
+检查是否登陆
+
+```endpoint
+GET /users/status
+```
+
+#### Example response
+
+```json
+{
+    "success": true,
+    "response": {
+        "admin": true,
+        "_id": "5a6a3adfd63e25e9d989fdbb",
+        "username": "admin"
+    }
+}
+```
+

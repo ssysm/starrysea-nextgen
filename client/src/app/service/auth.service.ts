@@ -19,6 +19,11 @@ export class AuthService {
       .post(environment.apiBase+'/users/cretae',cred)
   }
 
+  getLoginStatus(){
+    return this.http
+      .get(environment.apiBase+'/users/status');
+  }
+
   isLoggedIn(){
     return localStorage.getItem('loggedIn') == 'true';
   }

@@ -1,6 +1,8 @@
 const User = require('../models/User');
 const bcrypt = require('bcrypt-nodejs');
 const btoa = require('btoa');
+const atob = require('atob');
+const mongoose = require('mongoose');
 //Create New User
 //@body: username,password
 //@return: JSON Object
@@ -53,6 +55,34 @@ login = (req,res)=>{
         }
     })
 };
+//Check A User's login status base on the cookie
+//@cookie:token
+//@return: Http status code || JSON Object
+userStatus = (req,res)=>{
+    User.findOne({
+        _id:mongoose.Types.ObjectId(atob(req.cookies.token))
+    },["username","admin"],(err,docs)=>{
+        if(err){
+            res.status(500).json({
+                success:false,
+                response:err
+            })
+        }else{
+            if(!docs){
+                res.status(401).json({
+                    success:false,
+                    response:"No Match Record"
+                })
+            }else{
+                res.status(200).json({
+                    success:true,
+                    response:docs
+                })
+            }
+        }
+    })
+};
 
 module.exports.createUser = createUser;
 module.exports.login = login;
+module.exports.userStatus = userStatus;
