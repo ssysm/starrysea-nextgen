@@ -19,10 +19,10 @@ export class FundingService {
       .post(environment.apiBase+'/funding/create',data)
   }
 
-  deleteFundRecord(uid:String){
+  deleteFundRecord(activity_id,uid:String){
     return this.http
         .delete(environment.apiBase+'/funding/delete',new RequestOptions({
-      body: {uid:uid}
+      body: {activity_id:activity_id,uid:uid}
     }))
   }
 

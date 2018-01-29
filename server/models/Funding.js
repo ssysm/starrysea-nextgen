@@ -6,17 +6,17 @@ const schema = mongoose.Schema({
         type:String,
         required:true
     },
-    name:{
-        type:String,
-        required:true
-    },
-    amount:{
-        type:Number,
-        required:true
-    },
-    message:{
-        type:String
-    }
+    record:[{
+        name:{
+            type:String,
+        },
+        amount:{
+            type:Number,
+        },
+        message:{
+            type:String
+        }
+    }]
 });
 
 module.exports = mongoose.model('funding',schema);

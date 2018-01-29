@@ -32,7 +32,7 @@ export class ActivityDetailComponent implements OnInit {
           this.content = data.json().response.content.replace(/\n/g, "<br/>");
           this.fundingService.fetchFundingList(this.activityId)
             .subscribe(funding=>{
-              this.fundArr = funding.json().response;
+              this.fundArr = funding.json().response.record;
             })
         }else{
           this.router.navigate(['/404'])

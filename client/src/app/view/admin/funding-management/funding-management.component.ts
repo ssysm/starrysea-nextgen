@@ -42,12 +42,12 @@ export class FundingManagementComponent implements OnInit {
   updateFundTable(){
     this.fundingService.fetchFundingList(this.fundId)
       .subscribe(data=>{
-        this.fundArr = data.json().response
+        this.fundArr = data.json().response.record
       })
   }
 
-  deleteFund(uid:String){
-    this.fundingService.deleteFundRecord(uid)
+  deleteFund(activity_id,uid:String){
+    this.fundingService.deleteFundRecord(activity_id,uid)
       .subscribe(data=>{
         if(data.json().success){
           alert('删除成功');
@@ -62,8 +62,8 @@ export class FundingManagementComponent implements OnInit {
   addFund(data){
     this.fundingService.createFundRecord(data)
       .subscribe(data=>{
-        this.fundArr.push(data.json().response);
         $('#addFund').modal('hide');
+        location.reload();
       })
   }
 
