@@ -7,7 +7,7 @@ const mongoose = require('mongoose');
 fetchFundById = (req,res)=>{
     "use strict";
     var { activity_id } = req.query;
-    Funding.find({
+    Funding.findOne({
         activity_id
     },(err,docs)=>{
         if(err){
@@ -37,17 +37,23 @@ fetchFundById = (req,res)=>{
 createFundRecord = (req,res)=>{
     "use strict";
     var { activity_id,name,amount,message } = req.body;
-    const data = {activity_id, name, amount, message};
-    Funding.create(data,(err,docs)=>{
+    const data = {name, amount, message};
+    Funding.update({
+        activity_id:mongoose.Types.ObjectId(activity_id)
+    },{
+        $push:{
+            record:data
+        }
+    },(err,funding)=>{
         if(err){
             res.status(500).json({
                 success:false,
                 response:err
             })
         }else{
-            res.status(200).json({
+            res.json({
                 success:true,
-                response:docs
+                response:funding
             })
         }
     })
@@ -58,9 +64,9 @@ createFundRecord = (req,res)=>{
 //@return:JSON Object
 deleteFundRecord = (req,res)=>{
     "use strict";
-  Funding.remove({
-      _id:mongoose.Types.ObjectId(req.body.uid)
-  },(err,docs)=>{
+  Funding.update({
+      activity_id:req.body.activity_id
+  }, { $pull: { record:{_id:mongoose.Types.ObjectId(req.body.uid) } } } ,{ multi: true },(err,docs)=>{
       if(err){
           res.status(500).json({
               success:false,

@@ -18,7 +18,7 @@
       <tr *ngFor="let fund of fundArr">
         <td>{{fund.name}}</td>
         <td>{{fund.amount}}</td>
-        <td><a style="color: red" (click)="deleteFund(fund._id)">删除</a></td>
+        <td><a style="color: red" (click)="deleteFund(fundId,fund._id)">删除</a></td>
       </tr>
       </tbody>
     </table>
