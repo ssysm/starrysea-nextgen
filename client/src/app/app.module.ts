@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ServiceWorkerModule } from '@angular/service-worker';
+
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -29,6 +31,7 @@ import {AuthService} from "./service/auth.service";
 import {FileInputAccessorModule} from "file-input-accessor";
 import { FundingManagementComponent } from './view/admin/funding-management/funding-management.component';
 import {VersionService} from "./service/version.service";
+import {environment} from "../environments/environment";
 
 
 
@@ -57,6 +60,7 @@ import {VersionService} from "./service/version.service";
     ReactiveFormsModule,
     FormsModule,
     HttpModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production})
   ],
   providers: [
     ActivityService,
