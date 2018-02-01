@@ -26,5 +26,20 @@
         ]
       }
     }
+  ],
+  "dataGroups": [
+    {
+      "name": "version-api",
+      "urls": [
+        "https://api.starrysea.org/version/latest/commit",
+        "https://api.starrysea.org/version/latest/version"
+      ],
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 20,
+        "maxAge": "6h",
+        "timeout": "30s"
+      }
+    }
   ]
 }
