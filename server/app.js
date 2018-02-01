@@ -12,7 +12,7 @@ var activity = require('./routes/activity');
 var works = require('./routes/works');
 var funding = require('./routes/funding');
 var version = require('./routes/version');
-var ddos = new Ddos({burst:60, limit:1000});
+var ddos = new Ddos({burst:120, limit:800});
 
 var app = express();
 
