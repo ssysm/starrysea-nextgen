@@ -1,4 +1,6 @@
 {
+  "manifest_version": 1,
+  "version": "1.0.3",
   "short_name": "Starry Sea",
   "name": "Starry Sea International",
   "start_url": "/",

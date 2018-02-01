@@ -4,12 +4,15 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var Ddos = require('ddos');
 //Import Routing
 var index = require('./routes/index');
 var users = require('./routes/users');
 var activity = require('./routes/activity');
 var works = require('./routes/works');
 var funding = require('./routes/funding');
+var version = require('./routes/version');
+var ddos = new Ddos({burst:120, limit:800});
 
 var app = express();
 
@@ -19,6 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/static',express.static(path.join(__dirname, 'public')));
+app.use(ddos.express);
 //Allow CROS
 app.all('*', function(req, res, next) {
     console.log(req.get('host'));
@@ -34,7 +38,7 @@ app.use('/activity',activity);
 app.use('/users', users);
 app.use('/work',works);
 app.use('/funding',funding);
-
+app.use('/version',version);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
