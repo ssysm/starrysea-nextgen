@@ -32,6 +32,13 @@ getLatestVersion = (req,res)=>{
                     }
                 })
         })
+        .catch((err)=>{
+            res.status(500)
+                .json({
+                    success:false,
+                    response:err
+                })
+        })
 };
 
 module.exports.getLatestCommit = getLatestCommit;
