@@ -17,11 +17,23 @@ export class AboutComponent implements OnInit {
   ngOnInit() {
     this.versionService.getLatestCommit()
       .subscribe(data=>{
-        this.commit = data.json().response.commit
+        if(data.json().success){
+          this.commit = data.json().response.commit;
+        }else{
+          this.commit = "N/A"
+        }
+      },(error)=>{
+        this.commit = "N/A"
       });
     this.versionService.getLatestVersion()
       .subscribe(data=>{
-        this.Version = data.json().response.tag_name
+        if(data.json().success){
+          this.Version = data.json().response.tag_name
+        }else{
+          this.Version = "N/A"
+        }
+      },(error)=>{
+        this.Version = "N/A"
       })
   }
 
