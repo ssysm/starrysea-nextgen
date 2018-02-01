@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Http} from "@angular/http";
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class VersionService {
@@ -10,13 +11,13 @@ export class VersionService {
 
   getLatestCommit(){
     return this.http
-      .get('https://api.github.com/repos/ssysm/starrysea-nextgen/commits/')
+      .get(environment.apiBase+'/version/latest/commit')
 
   }
 
-  getVersion(){
+  getLatestVersion(){
     return this.http
-      .get('https://api.github.com/repos/ssysm/starrysea-nextgen/releases')
+      .get(environment.apiBase+'/version/latest/version')
   }
 
 }

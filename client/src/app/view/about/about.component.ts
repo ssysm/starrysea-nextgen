@@ -15,6 +15,14 @@ export class AboutComponent implements OnInit {
   commit:any;
   Version:string;
   ngOnInit() {
+    this.versionService.getLatestCommit()
+      .subscribe(data=>{
+        this.commit = data.json().response.commit
+      });
+    this.versionService.getLatestVersion()
+      .subscribe(data=>{
+        this.Version = data.json().response.tag_name
+      })
   }
 
 }
