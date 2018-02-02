@@ -21,4 +21,6 @@ module.exports =
     '# 作品\n'+
     fs.readFileSync('./content/work.md','utf8')+'\n' +
     '# 版本\n'+
-    fs.readFileSync('./content/version.md','utf8');
+    fs.readFileSync('./content/version.md','utf8')+'\n'+
+    '# 提问回答\n'+
+    fs.readFileSync('./content/qa.md','utf8');

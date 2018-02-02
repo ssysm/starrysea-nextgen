@@ -12,6 +12,8 @@ var activity = require('./routes/activity');
 var works = require('./routes/works');
 var funding = require('./routes/funding');
 var version = require('./routes/version');
+var qa = require('./routes/qa');
+//Init Ddos Protection
 var ddos = new Ddos({burst:120, limit:800});
 
 var app = express();
@@ -39,6 +41,7 @@ app.use('/users', users);
 app.use('/work',works);
 app.use('/funding',funding);
 app.use('/version',version);
+app.use('/qa',qa);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
