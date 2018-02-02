@@ -19,4 +19,6 @@ module.exports =
     '# 募捐\n'+
     fs.readFileSync('./content/funding.md','utf8') + '\n'+
     '# 作品\n'+
-    fs.readFileSync('./content/work.md','utf8')+'\n';
+    fs.readFileSync('./content/work.md','utf8')+'\n' +
+    '# 版本\n'+
+    fs.readFileSync('./content/version.md','utf8');
