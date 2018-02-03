@@ -34,6 +34,7 @@ import {VersionService} from "./service/version.service";
 import {environment} from "../environments/environment";
 import { QaComponent } from './view/qa/qa.component';
 import { QaService } from './service/qa.service';
+import { QaManagementComponent } from './view/admin/qa-management/qa-management.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { QaService } from './service/qa.service';
     AuthComponent,
     FundingManagementComponent,
     QaComponent,
+    QaManagementComponent,
   ],
   imports: [
     BrowserModule,
