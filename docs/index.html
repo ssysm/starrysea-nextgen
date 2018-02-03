@@ -10,11 +10,14 @@
     <link href='css/railscasts.css' rel='stylesheet' />
   </head>
   <body>
-    <!--START--><div id='app'><div class="container unlimiter" data-reactroot=""><div class="fixed-top fixed-right space-left16"><div class="fill-light col6 pin-right"></div></div><div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark"><div class="pad0x small"><div class="small pad0x quiet space-top1">简介</div><a href="#starrysea-international-api" class="line-height15 pad0x pad00y quiet block ">Starrysea International API</a><div class="small pad0x quiet space-top1">验证登陆</div><div class="small pad0x quiet space-top1">活动</div><div class="small pad0x quiet space-top1">募捐</div><div class="small pad0x quiet space-top1">作品</div></div></div><div class="space-left16"><div class=""><div class="clearfix"><div data-title="Starrysea International API" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h2 id="starrysea-international-api">Starrysea International API</h2>
+    <!--START--><div id='app'><div class="container unlimiter" data-reactroot=""><div class="fixed-top fixed-right space-left16"><div class="fill-light col6 pin-right"></div></div><div class="space-top5 scroll-styled overflow-auto pad1 width16 sidebar fixed-left fill-dark dark"><div class="pad0x small"><div class="small pad0x quiet space-top1">简介</div><a href="#starrysea-international-api" class="line-height15 pad0x pad00y quiet block ">Starrysea International API</a><div class="small pad0x quiet space-top1">验证登陆</div><div class="small pad0x quiet space-top1">活动</div><div class="small pad0x quiet space-top1">募捐</div><div class="small pad0x quiet space-top1">作品</div><div class="small pad0x quiet space-top1">版本</div><div class="small pad0x quiet space-top1">提问回答</div></div></div><div class="space-left16"><div class=""><div class="clearfix"><div data-title="Starrysea International API" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h2 id="starrysea-international-api">Starrysea International API</h2>
+<p>这是星之海国际版API文档</p>
 <p>This is starrysea International Ver. API Documentation</p>
-<p>API主机地址: api.starrysea.org</p>
-<p>活动静态文件地址: api.starrysea.org/static/activity/</p>
-<p>作品静态文件地址: api.starrysea.org/static/work/</p>
+<p><strong>流量限制</strong>:<em>800次访问,超过流量后120分钟自动重置</em></p>
+<p>API Server: <code>api.starrysea.org</code></p>
+<p>API主机地址: <code>api.starrysea.org</code></p>
+<p>活动静态文件地址: <code>api.starrysea.org/static/activity/</code></p>
+<p>作品静态文件地址: <code>api.starrysea.org/static/work/</code></p>
 </div></div><div data-title="创建一个新的管理员" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="创建一个新的管理员">创建一个新的管理员</h3>
 <p>创建一个新的管理员🆕 <strong>需要管理员权限</strong></p>
 <table>
@@ -445,6 +448,170 @@
       <div class='pad0 code small endpoint-url'>/work/delete</div>
     </div>
 <h4 id="example-response-13">Example response</h4>
+<pre class='hljs'>{
+    <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"response"</span>: {
+        <span class="hljs-attr">"n"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"ok"</span>: <span class="hljs-number">1</span>
+    }
+}</pre>
+</div></div><div data-title="获取最新版本信息" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="获取最新版本信息">获取最新版本信息</h3>
+<p>从Github上获取主分支最新版本信息</p>
+<p><em>注:Github API会限制访问次数，请做好缓存工作</em></p>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/version/latest/version</div>
+    </div>
+<h4 id="example-response-14">Example response</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"success"</span>:<span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"response"</span>:{
+    <span class="hljs-attr">"tag_name"</span>:<span class="hljs-string">"{Version Number}"</span>,
+    <span class="hljs-attr">"prerelease"</span>:<span class="hljs-literal">false</span>
+  }
+}</pre>
+</div></div><div data-title="获取最新commit信息" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="获取最新commit信息">获取最新commit信息</h3>
+<p>从Github上获取主分支最新commit信息</p>
+<p><em>注:Github API会限制访问次数，请做好缓存工作</em></p>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><h4 id="example-response-15">Example response</h4>
+<pre class='hljs'>{
+  <span class="hljs-attr">"success"</span>:<span class="hljs-literal">true</span>,
+  <span class="hljs-attr">"response"</span>:{
+    <span class="hljs-attr">"commit"</span>:<span class="hljs-string">"{Commit SHA512}"</span>
+  }
+}</pre>
+</div></div><div data-title="添加新问题" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="添加新问题">添加新问题</h3>
+<p>添加一个新的问题</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>question</code></td>
+<td>(必填) 提问的问题</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>POST</div>
+      <div class='pad0 code small endpoint-url'>/qa/ask</div>
+    </div>
+<h4 id="example-response-16">Example Response</h4>
+<pre class='hljs'>{
+    <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"response"</span>: {
+        <span class="hljs-attr">"answer"</span>: <span class="hljs-literal">null</span>,
+        <span class="hljs-attr">"answered"</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">"created"</span>: <span class="hljs-string">"2018-02-02T03:37:25.616Z"</span>,
+        <span class="hljs-attr">"_id"</span>: <span class="hljs-string">"5a73dd1b89194cb6fa3d7981"</span>,
+        <span class="hljs-attr">"question"</span>: <span class="hljs-string">"Hello123"</span>,
+        <span class="hljs-attr">"__v"</span>: <span class="hljs-number">0</span>
+    }
+}</pre>
+</div></div><div data-title="获取被回答问题列表" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="获取被回答问题列表">获取被回答问题列表</h3>
+<p>获取已回答的问题列表</p>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/qa/?page={页数}&limit={每页数量}</div>
+    </div>
+<h4 id="example-response-17">Example Response</h4>
+<pre class='hljs'>{
+    <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"response"</span>: [
+    {
+        <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">"response"</span>: [
+            {
+                <span class="hljs-attr">"answer"</span>: <span class="hljs-string">"你好 123"</span>,
+                <span class="hljs-attr">"answered"</span>: <span class="hljs-literal">true</span>,
+                <span class="hljs-attr">"created"</span>: <span class="hljs-string">"{timestamp}"</span>,
+                <span class="hljs-attr">"_id"</span>: <span class="hljs-string">"{OBJ Id}"</span>,
+                <span class="hljs-attr">"question"</span>: <span class="hljs-string">"Hello123"</span>,
+                <span class="hljs-attr">"__v"</span>: <span class="hljs-number">0</span>
+            }
+        ]
+    }
+    //...
+    ]
+}</pre>
+</div></div><div data-title="获取所有问题" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="获取所有问题">获取所有问题</h3>
+<p>获取所有问题(包括未回答) <em>需要管理员权限</em></p>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>GET</div>
+      <div class='pad0 code small endpoint-url'>/qa/all?page={页数}&limit={每页数量}</div>
+    </div>
+<h4 id="example-response-18">Example Response</h4>
+<pre class='hljs'>{
+    <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"response"</span>: [
+        {
+            <span class="hljs-attr">"answer"</span>: <span class="hljs-literal">null</span>,
+            <span class="hljs-attr">"answered"</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">"created"</span>: <span class="hljs-string">"2018-02-02T03:37:25.616Z"</span>,
+            <span class="hljs-attr">"_id"</span>: <span class="hljs-string">"5a73dd1b89194cb6fa3d7981"</span>,
+            <span class="hljs-attr">"question"</span>: <span class="hljs-string">"Hello123"</span>,
+            <span class="hljs-attr">"__v"</span>: <span class="hljs-number">0</span>
+        }
+    ]
+}</pre>
+</div></div><div data-title="回答问题" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="回答问题">回答问题</h3>
+<p>回答未回答的问题 <em>需要管理员权限</em></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>answer</code></td>
+<td>(必填) 问题回答</td>
+</tr>
+<tr>
+<td><code>uid</code></td>
+<td>(必填) 问题对象ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>PATCH</div>
+      <div class='pad0 code small endpoint-url'>/qa/answer</div>
+    </div>
+<h4 id="example-response-19">Example Response</h4>
+<pre class='hljs'>{
+    <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">"response"</span>: {
+        <span class="hljs-attr">"n"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"nModified"</span>: <span class="hljs-number">1</span>,
+        <span class="hljs-attr">"ok"</span>: <span class="hljs-number">1</span>
+    }
+}</pre>
+</div></div><div data-title="按对象ID删除问题" class="keyline-top section contain clearfix "><div class="space-bottom8 col6 pad2x prose clip"><h3 id="按对象id删除问题">按对象ID删除问题</h3>
+<p>按对象ID删除问题 <em>需要管理员权限</em></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>介绍</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uid</code></td>
+<td>(必填) 问题对象ID</td>
+</tr>
+</tbody>
+</table>
+</div><div class="space-bottom4 col6 pad2 prose clip fill-light space-top5"><div class='endpoint dark fill-dark round '>
+      <div class='round-left pad0y pad1x fill-lighten0 code small endpoint-method'>DELETE</div>
+      <div class='pad0 code small endpoint-url'>/qa/delete</div>
+    </div>
+<h4 id="example-response-20">Example Response</h4>
 <pre class='hljs'>{
     <span class="hljs-attr">"success"</span>: <span class="hljs-literal">true</span>,
     <span class="hljs-attr">"response"</span>: {
