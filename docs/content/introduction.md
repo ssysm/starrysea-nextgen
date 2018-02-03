@@ -4,7 +4,7 @@
 
 This is starrysea International Ver. API Documentation
 
-__流量限制__:*800次访问,超过流量后120自动重置*
+__流量限制__:*800次访问,超过流量后120分钟自动重置*
 
 API Server: `api.starrysea.org`
 
