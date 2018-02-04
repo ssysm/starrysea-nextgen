@@ -27,7 +27,6 @@ app.use('/static',express.static(path.join(__dirname, 'public')));
 app.use(ddos.express);
 //Allow CROS
 app.all('*', function(req, res, next) {
-    console.log(req.get('host'));
     res.header("Access-Control-Allow-Origin", req.get('origin'));
     res.header("Access-Control-Allow-Credentials","true");
     res.header("Access-Control-Allow-Headers", "Content-Type");
