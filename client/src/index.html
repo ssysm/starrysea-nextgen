@@ -1,29 +1,33 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!--Init View-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Starry Sea Volunteers Association</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!--PWA Setting-->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#409cc3">
-  <title>StarrySea</title>
-
-  <base href="/">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="manifest" href="/manifest.json">
   <style>.splash{opacity: 0;position: fixed;height: 100%;width: 100%;margin-top: 15%;text-align: center;z-index: -1;font-family: Arial,"Times New Roman", sans-serif}  app-root:empty + .splash {opacity: 1;z-index: 100;}</style>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113481030-1"></script>
-  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113481030-1');</script>
-
+  <!--SEO-->
+  <meta name="description" content="Starry Sea Volunteers Association">
+  <meta name="keywords" content="Starrysea,星之海,Starry Sea,Starry Sea Volunteers Association">
+  <meta property="og:title" content="Starry Sea"/>
+  <meta property="og:site_name" content="Starry Sea Volunteers Association"/>
+  <!--Angular Routing-->
+  <base href="/">
 </head>
 <body>
   <app-root></app-root>
+  <!--PWA Loading-->
   <div class="splash">
     <img src="/assets/img/starsea.png" alt="Starrysea Logo" style="width: 348px;height: auto;">
     <h2>Starrysea International</h2>
     <h3>Loading...</h3>
   </div>
+  <!--No Script-->
   <noscript>
     <p>
       Sorry, JavaScript must be enabled to use this app
