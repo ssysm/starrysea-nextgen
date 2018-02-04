@@ -10,7 +10,7 @@
     </thead>
     <tbody *ngFor="let qa of qaList">
     <tr>
-      <th scope="row">{{qa._id | textSlice:6}}</th>
+      <th scope="row">{{qa._id | textSlice:12}}</th>
       <td>{{qa.question|textSlice:8}}</td>
       <td>{{qa.created | date : 'yyyy/mm/dd HH:ss'}}</td>
       <td>
