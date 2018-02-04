@@ -1,0 +1,39 @@
+<div class="container">
+  <!--Intro Text-->
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <p class="h2">If you have any questions or any doubt</p>
+      <p class="h2">Please write it in the question box</p>
+    </div>
+  </div>
+  <!--Form Element-->
+  <div class="row">
+    <div class="col-sm-12">
+      <form>
+        <div class="form-group center-block">
+          <label for="message">Your Message:</label>
+          <textarea class="form-control" id="message" name="message" rows="7" [(ngModel)]="question"></textarea>
+          <p class="text-center text-muted">The question is completely anonymous，Please do not ask question that do not meet the core values of socialism,谢谢茄子</p>
+        </div>
+        <button type="submit" id="submitBtn" class="btn" (click)="askQuestion()">Send</button>
+      </form>
+    </div>
+  </div>
+  <!--QA Box-->
+  <div class="row qaBox">
+    <p class="h3 qaText">Answered Questions</p>
+    <div class="qaList" *ngFor="let qa of QaList">
+      <div class="col-sm-12 col-md-10 qBox">
+        <p class="qText">
+          Q:{{qa.question}}
+        </p>
+      </div>
+      <div class="col-sm-12 col-md-10 aBox">
+        <p class="aText">
+          A:{{qa.answer}}
+        </p>
+      </div>
+      <hr>
+    </div>
+  </div>
+</div>

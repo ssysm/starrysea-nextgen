@@ -1,0 +1,53 @@
+#submitBtn {
+  margin: 0 auto;
+  display: table;
+  display: -webkit-box;
+  padding: 10px;
+  width: 25vw;
+  font-size: 1.25em;
+  background-color: #fafafa;
+  color: rgb(82, 82, 82);
+  border: solid 1px #409cc3;
+}
+
+#submitBtn:hover{
+  background-color: #409cc3;
+  border: solid 1px #ffffff;
+  color: white;
+}
+
+textarea {
+  resize: none
+}
+
+.qaText {
+  color: #409cc3;
+}
+
+.qaBox {
+  margin: 25px;
+}
+
+.qaBox > * >* {
+  margin: 10px
+}
+
+.qaList{
+  width: 100%;
+  height: 100%;
+}
+.qaBox > .qaList > .qBox > .qText {
+  padding: 20px;
+  background: #409cc3;
+  border-radius: 5px;
+  color: #fafafa;
+  font-size: 1.65rem;
+}
+
+.qaBox > .qaList > .aBox > .aText {
+  padding: 20px;
+  background: orange;
+  border-radius: 5px;
+  color: #fafafa;
+  font-size: 1.65rem;
+}

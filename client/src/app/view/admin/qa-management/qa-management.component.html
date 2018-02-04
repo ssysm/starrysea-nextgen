@@ -1,0 +1,51 @@
+<div class="container" *ngIf="qaList">
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">问题</th>
+      <th scope="col">提问时间</th>
+      <th scope="col">操作</th>
+    </tr>
+    </thead>
+    <tbody *ngFor="let qa of qaList">
+    <tr>
+      <th scope="row">{{qa._id | textSlice:12}}</th>
+      <td>{{qa.question|textSlice:8}}</td>
+      <td>{{qa.created | date : 'yyyy/mm/dd HH:ss'}}</td>
+      <td>
+        <button class="btn btn-info" (click)="cQaId=qa._id" *ngIf="!qa.answered" data-toggle="modal" data-value="{{qa._id}}" data-target="#qaAnswerBox">回答</button>
+        <a (click)="deleteQa(qa._id)" style="cursor: pointer;color:red">删除</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal fade" id="qaAnswerBox" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">回答问题</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="answerQa(f.value)" #f="ngForm" [formGroup]="qaAnswerForm">
+          <div class="form-group">
+            <label for="uid" class="col-form-label">问题ID:</label>
+            <input type="text" formControlName="uid" [ngModel]="cQaId" class="form-control disabled" name="uid" disabled  id="uid">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">回复:</label>
+            <textarea class="form-control" name="answer" formControlName="answer" id="message-text" style="resize: none;"></textarea>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+            <button type="submit" class="btn btn-primary" *ngIf="qaAnswerForm.valid">回复</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

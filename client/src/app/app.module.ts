@@ -32,7 +32,10 @@ import {FileInputAccessorModule} from "file-input-accessor";
 import { FundingManagementComponent } from './view/admin/funding-management/funding-management.component';
 import {VersionService} from "./service/version.service";
 import {environment} from "../environments/environment";
-
+import { QaComponent } from './view/qa/qa.component';
+import { QaService } from './service/qa.service';
+import { QaManagementComponent } from './view/admin/qa-management/qa-management.component';
+import { TextSlicePipe } from './common/pipe/text-slice.pipe';
 
 
 @NgModule({
@@ -52,7 +55,10 @@ import {environment} from "../environments/environment";
     WorkManagementComponent,
     FooterComponent,
     AuthComponent,
-    FundingManagementComponent
+    FundingManagementComponent,
+    QaComponent,
+    QaManagementComponent,
+    TextSlicePipe,
   ],
   imports: [
     BrowserModule,
@@ -72,8 +78,9 @@ import {environment} from "../environments/environment";
     VersionService,
     {
     provide: BrowserXhr,
-    useClass:cros
-    }
+    useClass:cros,
+    },
+    QaService
   ],
   bootstrap: [AppComponent]
 })

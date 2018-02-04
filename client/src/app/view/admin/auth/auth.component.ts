@@ -16,7 +16,6 @@ export class AuthComponent implements OnInit {
   ) { }
 
   loginForm: FormGroup;
-
   ngOnInit() {
     this.loginForm = new FormGroup({
       username: new FormControl('',[

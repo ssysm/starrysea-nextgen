@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AuthService} from "../service/auth.service";
-import {Router} from "@angular/router";
+import {ActivatedRouteSnapshot, Router, RouterStateSnapshot} from "@angular/router";
+import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class AdminGuardService {
@@ -10,13 +11,16 @@ export class AdminGuardService {
     private router:Router
   ) { }
 
-  canActivate(){
-   if(this.authService.isLoggedIn()){
-     return true;
-   }else {
-     this.router.navigate(['/']);
-     return false;
-   }
+  canActivate(route:ActivatedRouteSnapshot, state:RouterStateSnapshot):Observable<boolean>|boolean {
+    let the_cookie = document.cookie.split(';');
+    let token = the_cookie[0].split("=")[1];
+    if(token){
+      return true
+    }else{
+      this.router.navigate(['/']);
+      return false;
+    }
+
   }
 
 }
