@@ -24,9 +24,4 @@ export class AuthService {
       .get(environment.apiBase+'/users/status');
   }
 
-  isLoggedIn(){
-    return localStorage.getItem('loggedIn') == 'true';
-  }
-
-
 }

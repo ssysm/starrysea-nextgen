@@ -35,6 +35,7 @@ import {environment} from "../environments/environment";
 import { QaComponent } from './view/qa/qa.component';
 import { QaService } from './service/qa.service';
 import { QaManagementComponent } from './view/admin/qa-management/qa-management.component';
+import { TextSlicePipe } from './common/pipe/text-slice.pipe';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { QaManagementComponent } from './view/admin/qa-management/qa-management.
     FundingManagementComponent,
     QaComponent,
     QaManagementComponent,
+    TextSlicePipe,
   ],
   imports: [
     BrowserModule,
