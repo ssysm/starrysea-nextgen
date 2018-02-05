@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { QaComponent } from './qa.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
+import {QaService} from "../../service/qa.service";
 
 describe('QaComponent', () => {
   let component: QaComponent;
@@ -8,7 +11,9 @@ describe('QaComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QaComponent ]
+      declarations: [ QaComponent ],
+      imports:[FormsModule,ReactiveFormsModule,HttpModule],
+      providers:[QaService]
     })
     .compileComponents();
   }));
