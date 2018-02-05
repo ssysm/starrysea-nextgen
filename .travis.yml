@@ -23,4 +23,4 @@ before_script:
 - cd docs && npm install && cd ..
 - cd client && npm install && cd ..
 
-script: karma start client/karma.conf.js --single-run && npm run test --prefix=docs
+script: node -v
