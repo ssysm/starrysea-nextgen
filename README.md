@@ -5,7 +5,6 @@ Starrysea International Ver.
 
 [![Build Status](https://travis-ci.org/ssysm/starrysea-nextgen.svg?branch=master)](https://travis-ci.org/ssysm/starrysea-nextgen)
 
-
 ## Usage
 
 -> API Server [API Documentation](https://starseaproject.github.io/starrysea-international/#starrysea-international-api)(Chinese Only)
