@@ -3,6 +3,9 @@
 
 Starrysea International Ver.
 
+[![Build Status](https://travis-ci.org/ssysm/starrysea-nextgen.svg?branch=master)](https://travis-ci.org/ssysm/starrysea-nextgen)
+
+
 ## Setup
 
 ### Dependencies:
