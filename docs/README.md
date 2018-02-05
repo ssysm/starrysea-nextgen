@@ -1,3 +1,3 @@
-#星之海 海外版API文档
+# 星之海 海外版API文档
 
-##Starrysea International Ver. API documentation
+## Starrysea International Ver. API documentation

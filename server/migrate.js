@@ -16,7 +16,7 @@ User.create(data,(err,docs)=>{
     if(err) throw err;
     else {
         console.log(docs);
-        console.log("移植初始化完成");
+        console.log("Database Migration Finished");
         process.exit();
     }
 });
