@@ -90,9 +90,13 @@ const routes: Routes = [
     ]
   },
   {
-    path:'**',
+    path:'404',
     component:NotFoundComponent
   },
+  {
+    path:'**',
+    component:NotFoundComponent
+  }
 ];
 
 @NgModule({
