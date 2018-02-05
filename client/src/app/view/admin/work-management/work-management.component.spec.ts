@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WorkManagementComponent } from './work-management.component';
+import {HttpModule} from "@angular/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {WorkService} from "../../../service/work.service";
 
 describe('WorkManagementComponent', () => {
   let component: WorkManagementComponent;
@@ -8,7 +11,9 @@ describe('WorkManagementComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WorkManagementComponent ]
+      declarations: [ WorkManagementComponent ],
+      imports:[HttpModule,FormsModule,ReactiveFormsModule],
+      providers:[WorkService]
     })
     .compileComponents();
   }));

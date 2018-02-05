@@ -35,10 +35,10 @@ export class ActivityDetailComponent implements OnInit {
               this.fundArr = funding.json().response.record;
             })
         }else{
-          this.router.navigate(['/404'])
+          this.router.navigate(['/','404'])
         }
       },error=>{
-        this.router.navigate(['/404'])
+        this.router.navigate(['/','404'])
       })
   }
 

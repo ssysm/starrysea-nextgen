@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { WorkComponent } from './work.component';
+import {HttpModule} from "@angular/http";
+import {WorkService} from "../../service/work.service";
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe('WorkComponent', () => {
   let component: WorkComponent;
@@ -8,7 +11,9 @@ describe('WorkComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WorkComponent ]
+      declarations: [ WorkComponent ],
+      imports:[HttpModule,RouterTestingModule],
+      providers:[WorkService]
     })
     .compileComponents();
   }));

@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { QaManagementComponent } from './qa-management.component';
+import {QaService} from "../../../service/qa.service";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {HttpModule} from "@angular/http";
+import {TextSlicePipe} from "../../../common/pipe/text-slice.pipe";
 
 describe('QaManagementComponent', () => {
   let component: QaManagementComponent;
@@ -8,7 +12,9 @@ describe('QaManagementComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ QaManagementComponent ]
+      declarations: [ QaManagementComponent,TextSlicePipe ],
+      providers:[QaService],
+      imports:[FormsModule,ReactiveFormsModule,HttpModule]
     })
     .compileComponents();
   }));

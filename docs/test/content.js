@@ -70,11 +70,6 @@ describe('content', () => {
         });
       });
 
-      it('has h2 title', function() {
-        expect(ast.children[0].type).toEqual('heading');
-        expect(ast.children[0].depth).toEqual(2);
-      });
-
       it('has API description', function() {
         expect(ast.children[1].type === 'paragraph' || ast.children[1].type === 'html').toEqual(true);
       });
@@ -102,15 +97,6 @@ describe('content', () => {
             var endpoint = select(chunk, 'code[lang=endpoint]');
             expect(endpoint.length).toBeGreaterThan(0);
             expect(endpoint[0].value.toString()).toMatch(/^(PUT|POST|GET|DELETE|PATCH)/);
-          });
-          it('has python example', () => {
-            expect(select(chunk, 'code[lang=python]').length).toBeGreaterThan(0);
-          });
-          it('has js example', () => {
-            expect(select(chunk, 'code[lang=javascript]').length).toBeGreaterThan(0);
-          });
-          it('has curl example', () => {
-            expect(select(chunk, 'code[lang=curl]').length).toBeGreaterThan(0);
           });
         });
       });

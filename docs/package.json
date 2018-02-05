@@ -6,10 +6,10 @@
   "scripts": {
     "start": "budo src/index.js --serve=bundle.js --live",
     "changelog": "standard-changelog -w CHANGELOG.md",
-    "test": "npm run test-unit && eslint src && npm run prerender -- /dev/null && rm -rf lib",
+    "test": "npm run test-unit && eslint src",
     "test-unit": "mocha --compilers js:babel-register test",
     "prerender": "babel src --out-dir lib && node lib/render.js",
-    "build": "browserify src/index.js | uglifyjs -c -m > bundle.js && npm run prerender -- index.html",
+    "build": "browserify src/index.js | uglifyjs -c -m > bundle.js",
     "release": "standard-version && git push --follow-tags origin master; npm publish"
   },
   "browserify": {
@@ -46,8 +46,8 @@
     "lodash.debounce": "^4.0.3",
     "minifyify": "^7.1.0",
     "prop-types": "^15.5.9",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
+    "react": "^15.5.0-rc.2",
+    "react-dom": "^15.5.0-rc.2",
     "remark": "^8.0.0",
     "remark-html": "^7.0.0",
     "remark-slug": "^5.0.0",
@@ -64,14 +64,5 @@
     "mocha": "^4.0.1",
     "to-vfile": "^2.0.0",
     "uglify-js": "^3.0.27"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tmcw/docbox.git"
   }
 }

@@ -31,7 +31,7 @@ export class AuthComponent implements OnInit {
     this.authService.login(cred)
       .subscribe(data=>{
         localStorage.setItem('loggedIn','true');
-        this.router.navigate(['/admin']);
+        this.router.navigate(['/','admin']);
       },error=>{
         alert('密码或用户名错误');
       })

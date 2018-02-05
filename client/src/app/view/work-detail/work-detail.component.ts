@@ -27,10 +27,10 @@ export class WorkDetailComponent implements OnInit {
         if(data.json().success){
           this.workData = data.json().response;
         }else{
-          this.router.navigate(['/404'])
+          this.router.navigate(['/','404'])
         }
       },error=>{
-        this.router.navigate(['/404'])
+        this.router.navigate(['/','404'])
       })
   }
 
