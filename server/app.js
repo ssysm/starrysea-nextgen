@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var Ddos = require('ddos');
+var config = require('./config');
 //Import Routing
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -27,11 +28,18 @@ app.use('/static',express.static(path.join(__dirname, 'public')));
 app.use(ddos.express);
 //Allow CROS
 app.all('*', function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", req.get('origin'));
-    res.header("Access-Control-Allow-Credentials","true");
-    res.header("Access-Control-Allow-Headers", "Content-Type");
-    res.header("Access-Control-Allow-Methods","GET,PUT,POST,DELETE,OPTIONS,PATCH");
-    next();
+    if(config.trustOrigin.includes(req.get('Origin'))) {
+        res.header("Access-Control-Allow-Origin", req.get('origin'));
+        res.header("Access-Control-Allow-Credentials", "true");
+        res.header("Access-Control-Allow-Headers", "Content-Type");
+        res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS,PATCH");
+        next();
+    }else{
+        res.header("Access-Control-Allow-Origin", '*');
+        res.header("Access-Control-Allow-Headers", "Content-Type");
+        res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS,PATCH");
+        next();
+    }
 });
 //Init Express Routing
 app.use('/', index);
@@ -53,7 +61,7 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
   console.log(err);
-  res.status(err.status).send(err);
+  res.status(err.status);
 });
 
 module.exports = app;

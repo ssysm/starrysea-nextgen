@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
-
+var { ping,errorImg }  = require('../actions/index');
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.send('express');
-});
+router.get('/', ping);
+
+router.get('/errorImg',errorImg);
 
 module.exports = router;

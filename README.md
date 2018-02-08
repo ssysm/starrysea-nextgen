@@ -21,6 +21,8 @@ Starrysea International Ver.
 - Run MongoDB Server
 - Config in `config.js`
    - `database`: MongoDB Connection uri
+   - `trustOrigin`: Origin that will responses an acceptable CROS header 
+- Install Private Key in `/keys` to decrypt for Cucu's image
 - `npm install`
 - `node migrate.js`
 - `npm run start`

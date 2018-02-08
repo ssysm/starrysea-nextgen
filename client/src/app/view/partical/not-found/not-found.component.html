@@ -1,7 +1,18 @@
 <div class="container">
   <div class="text-center">
-    <p class="h1 text-thin">404 Page Not Found</p>
-    <img src="/assets/img/error_dia.png" alt="Error" style="width: 55%;">
+    <p class="h1 text-thin">404
+      <br>
+      Page Not Found
+    </p>
+    <img src="/assets/img/error_dia.png" alt="Error" style="width: 25%;">
     <p class="h2 text-thin">Please Try Again Later</p>
+    <div style="border: solid #fafafa 1px; border-radius: 5px" *ngIf="cucuImg">
+      <p class="text-thin">Here is a random picture of cucu</p>
+        <img
+          [src]="'data:image/png;base64,'+cucuImg"
+          class="img-fluid img-pix"
+          alt="cucu Image"
+        />
+    </div>
   </div>
 </div>

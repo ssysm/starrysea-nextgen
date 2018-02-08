@@ -68,3 +68,5 @@ typings/
 /server/public/work/*.jpeg
 /server/public/work/*.jpg
 /server/public/work/*.pdf
+
+*.key
