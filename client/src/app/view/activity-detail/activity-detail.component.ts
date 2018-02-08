@@ -3,6 +3,7 @@ import {ActivityService} from "../../service/activity.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FundingService} from "../../service/funding.service";
 import {environment} from "../../../environments/environment";
+import {Meta, Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-activity-detail',
@@ -16,6 +17,8 @@ export class ActivityDetailComponent implements OnInit {
     private fundingService:FundingService,
     private route:ActivatedRoute,
     private router:Router,
+    private metaService:Meta,
+    private titleService:Title
   ) { }
 
   activityId:string;
@@ -30,6 +33,11 @@ export class ActivityDetailComponent implements OnInit {
         if(data.json().success){
           this.activityData = data.json().response;
           this.content = data.json().response.content.replace(/\n/g, "<br/>");
+          this.titleService.setTitle(data.json().response.name+' - Starry Sea Volunteers Association');
+          this.metaService.updateTag({content: environment.apiBase+'/static/activity/'+data.json().response.cover}, "property='og:image'");
+          this.metaService.updateTag({content: data.json().response.name+' - Starry Sea Volunteers Association'}, "property='og:title'");
+          this.metaService.updateTag({content: data.json().response.summary}, "property='og:description'");
+          this.metaService.updateTag({content: data.json().response.summary}, "name='description'");
           this.fundingService.fetchFundingList(this.activityId)
             .subscribe(funding=>{
               this.fundArr = funding.json().response.record;
