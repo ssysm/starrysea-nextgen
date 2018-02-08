@@ -12,7 +12,7 @@ ping = (req,res)=>{
 
 errorImg = (req,res)=>{
     if(config.trustOrigin.includes(req.get("Origin"))){
-        fs.readdir(path.join('public/cucuEnc/'),(err,files)=>{
+        fs.readdir(path.join(__dirname+'/../public/cucuEnc/'),(err,files)=>{
             var item = files[Math.floor(Math.random()*files.length)];
             var bitmap = fs.readFileSync(path.join(__dirname+'/../public/cucuEnc/'+item),'utf8');
             res.send(key.decrypt(bitmap,'base64'));
