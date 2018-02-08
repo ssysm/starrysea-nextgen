@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Http} from "@angular/http";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-not-found',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotFoundComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private http:Http
+  ) { }
+
+  cucuImg:string;
 
   ngOnInit() {
+    this.
+      http
+        .get(environment.apiBase+'/errorImg',)
+      .subscribe(data=>{
+        this.cucuImg = data.text();
+      })
+
   }
 
 }

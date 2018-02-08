@@ -1,3 +1,15 @@
 .text-thin{
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
+.img-pix{
+  transition: filter 0.5s;
+  padding: 25px;
+  max-width: 70%;
+  height: auto;
+  border-radius: 25px;
+  filter:blur(15px);
+}
+.img-pix:hover{
+  transition: filter 0.5s;
+  filter:none;
+}
