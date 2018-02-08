@@ -10,16 +10,12 @@ ping = (req,res)=>{
     res.send('express');
 };
 
-decImg = (encData)=>{
-    return key.decrypt(encData,'base64');
-};
-
 errorImg = (req,res)=>{
     if(config.trustOrigin.includes(req.get("Origin"))){
         fs.readdir(path.join('public/cucuEnc/'),(err,files)=>{
             var item = files[Math.floor(Math.random()*files.length)];
             var bitmap = fs.readFileSync(path.join(__dirname+'/../public/cucuEnc/'+item),'utf8');
-            res.send(decImg(bitmap));
+            res.send(key.decrypt(bitmap,'base64'));
         });
     }else{
         res.status(403).json({
