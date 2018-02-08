@@ -23,9 +23,9 @@ export class WorkComponent implements OnInit {
     this.titleService.setTitle('Works Gallery - Starry Sea Volunteers Association');
     this.metaService.updateTag({content:'/assets/icons/starrysea-512x512.png'}, "property='og:image'");
     this.metaService.updateTag({content: 'Work Gallery - Starry Sea Volunteers Association'}, "property='og:title'");
-    this.metaService.updateTag({content: 'We Are Starry Sea Volunteers Association'}, "property='og:description'");
-    this.metaService.updateTag({content: 'We Are Starry Sea Volunteers Association'}, "name='description'");
-    this.workService.fetchWorkList(1,10)
+    this.metaService.updateTag({content: 'All Works from Starry Sea'}, "property='og:description'");
+    this.metaService.updateTag({content: 'All Works from Starry Sea'}, "name='description'");
+    this.workService.fetchWorkList(1,99)
       .subscribe(data=>{
         this.workArr = data.json().response
       })
