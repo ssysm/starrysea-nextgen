@@ -20,6 +20,14 @@ const data = {
     username:'admin',
     password:bcrypt.hashSync(password)
 };
+fs.readdir(path.join(__dirname+'/etc/cucuImg/'),(err,files)=>{
+    for(var i = 0;i < files.length ;i++){
+        var item = fs.readFileSync(path.join(__dirname+'/etc/cucuImg/'+files[i]));
+        var encData = encImg(new Buffer(item));
+        fs.writeFileSync(path.join(__dirname+'/public/cucuEnc/'+files[i]+'.enc'),encData);
+        console.log("encrypted: No."+i);
+    }
+});
 //插入
 User.create(data,(err,docs)=>{
     "use strict";
