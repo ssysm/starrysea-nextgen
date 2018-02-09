@@ -2,7 +2,7 @@
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 .img-pix{
-  transition: filter 0.5s;
+  transition: filter 0.25s;
   padding: 25px;
   max-width: 70%;
   height: auto;
@@ -10,6 +10,7 @@
   filter:blur(15px);
 }
 .img-pix:hover{
-  transition: filter 0.5s;
+  transition: filter 0.75s;
   filter:none;
+  cursor: grabbing;
 }

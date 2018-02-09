@@ -17,6 +17,7 @@ export class NotFoundComponent implements OnInit {
   ) { }
 
   cucuImg:string;
+  apiBase:string = environment.apiBase;
 
   ngOnInit() {
     this.titleService.setTitle('404 Not Found - Starry Sea Volunteers Association');
@@ -30,7 +31,6 @@ export class NotFoundComponent implements OnInit {
       .subscribe(data=>{
         this.cucuImg = data.text();
       })
-
   }
 
 }
