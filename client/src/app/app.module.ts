@@ -36,6 +36,7 @@ import { QaComponent } from './view/qa/qa.component';
 import { QaService } from './service/qa.service';
 import { QaManagementComponent } from './view/admin/qa-management/qa-management.component';
 import { TextSlicePipe } from './common/pipe/text-slice.pipe';
+import { SpinnerComponent } from './view/partical/spinner/spinner.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { TextSlicePipe } from './common/pipe/text-slice.pipe';
     QaComponent,
     QaManagementComponent,
     TextSlicePipe,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,

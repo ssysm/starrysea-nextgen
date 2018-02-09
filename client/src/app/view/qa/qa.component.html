@@ -20,7 +20,7 @@
     </div>
   </div>
   <!--QA Box-->
-  <div class="row qaBox">
+  <div class="row qaBox" *ngIf="QaList">
     <p class="h3 qaText">Answered Questions</p>
     <div class="qaList" *ngFor="let qa of QaList">
       <div class="col-sm-12 col-md-10 qBox">
@@ -35,5 +35,8 @@
       </div>
       <hr>
     </div>
+  </div>
+  <div class="row">
+    <app-spinner *ngIf="!QaList"></app-spinner>
   </div>
 </div>
