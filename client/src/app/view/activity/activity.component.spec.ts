@@ -4,6 +4,7 @@ import { ActivityComponent } from './activity.component';
 import {ActivityService} from "../../service/activity.service";
 import {HttpModule} from "@angular/http";
 import {RouterTestingModule} from "@angular/router/testing";
+import {SpinnerComponent} from "../partical/spinner/spinner.component";
 
 describe('ActivityComponent', () => {
   let component: ActivityComponent;
@@ -11,7 +12,7 @@ describe('ActivityComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ActivityComponent ],
+      declarations: [ ActivityComponent,SpinnerComponent ],
       imports:[HttpModule,RouterTestingModule],
       providers:[ActivityService]
     })

@@ -12,7 +12,7 @@ import {UserManagementComponent} from "./view/admin/user-management/user-managem
 import {ActivityManagementComponent} from "./view/admin/activity-management/activity-management.component";
 import {WorkManagementComponent} from "./view/admin/work-management/work-management.component";
 import {AuthComponent} from "./view/admin/auth/auth.component";
-import {AdminGuardService} from "./common/admin-guard.service";
+import {AdminGuardService} from "./common/guard/admin-guard.service";
 import {QaComponent} from "./view/qa/qa.component";
 
 const routes: Routes = [

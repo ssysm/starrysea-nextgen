@@ -25,7 +25,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpModule, BrowserXhr} from "@angular/http";
 import {cros} from "./common/cros";
 import { FooterComponent } from './view/partical/footer/footer.component';
-import {AdminGuardService} from "./common/admin-guard.service";
+import {AdminGuardService} from "./common/guard/admin-guard.service";
 import { AuthComponent } from './view/admin/auth/auth.component';
 import {AuthService} from "./service/auth.service";
 import {FileInputAccessorModule} from "file-input-accessor";
