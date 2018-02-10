@@ -10,7 +10,7 @@ import {SpinnerComponent} from "../partical/spinner/spinner.component";
 describe('ActivityDetailComponent', () => {
   let component: ActivityDetailComponent;
   let fixture: ComponentFixture<ActivityDetailComponent>;
-
+  let compiled: any;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ActivityDetailComponent,SpinnerComponent ],
@@ -23,6 +23,7 @@ describe('ActivityDetailComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ActivityDetailComponent);
     component = fixture.componentInstance;
+    compiled = fixture.debugElement.nativeElement;
     fixture.detectChanges();
   });
 
