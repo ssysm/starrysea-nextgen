@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NotFoundComponent } from './not-found.component';
 import {HttpModule} from "@angular/http";
+import {SpinnerComponent} from "../spinner/spinner.component";
 
 describe('NotFoundComponent', () => {
   let component: NotFoundComponent;
@@ -9,7 +10,7 @@ describe('NotFoundComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NotFoundComponent ],
+      declarations: [ NotFoundComponent,SpinnerComponent ],
       imports:[HttpModule]
     })
     .compileComponents();

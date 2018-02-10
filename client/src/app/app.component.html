@@ -1,3 +1,8 @@
+<!--Application Navbar-->
 <app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<!--Routing Entry-->
+<main [@routeAnimation]="getRouteAnimation(o)">
+  <router-outlet #o="outlet"></router-outlet>
+</main>
+<!--Application Footer-->
 <app-footer></app-footer>

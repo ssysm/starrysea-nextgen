@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {VersionService} from "../../service/version.service";
 import {Meta,Title} from "@angular/platform-browser";
+import {routeAnimation} from "../../common/animation";
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  styleUrls: ['./about.component.css'],
+  animations: [routeAnimation],
 })
 export class AboutComponent implements OnInit {
 

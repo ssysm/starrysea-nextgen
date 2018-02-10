@@ -4,6 +4,7 @@ import { WorkComponent } from './work.component';
 import {HttpModule} from "@angular/http";
 import {WorkService} from "../../service/work.service";
 import {RouterTestingModule} from "@angular/router/testing";
+import {SpinnerComponent} from "../partical/spinner/spinner.component";
 
 describe('WorkComponent', () => {
   let component: WorkComponent;
@@ -11,7 +12,7 @@ describe('WorkComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WorkComponent ],
+      declarations: [ WorkComponent,SpinnerComponent ],
       imports:[HttpModule,RouterTestingModule],
       providers:[WorkService]
     })

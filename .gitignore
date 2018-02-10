@@ -69,4 +69,6 @@ typings/
 /server/public/work/*.jpg
 /server/public/work/*.pdf
 
+/server/etc/cucuImg/*.jpg
+
 *.key

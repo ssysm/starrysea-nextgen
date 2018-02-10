@@ -25,7 +25,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpModule, BrowserXhr} from "@angular/http";
 import {cros} from "./common/cros";
 import { FooterComponent } from './view/partical/footer/footer.component';
-import {AdminGuardService} from "./common/admin-guard.service";
+import {AdminGuardService} from "./common/guard/admin-guard.service";
 import { AuthComponent } from './view/admin/auth/auth.component';
 import {AuthService} from "./service/auth.service";
 import {FileInputAccessorModule} from "file-input-accessor";
@@ -36,6 +36,8 @@ import { QaComponent } from './view/qa/qa.component';
 import { QaService } from './service/qa.service';
 import { QaManagementComponent } from './view/admin/qa-management/qa-management.component';
 import { TextSlicePipe } from './common/pipe/text-slice.pipe';
+import { SpinnerComponent } from './view/partical/spinner/spinner.component';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -59,6 +61,7 @@ import { TextSlicePipe } from './common/pipe/text-slice.pipe';
     QaComponent,
     QaManagementComponent,
     TextSlicePipe,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,6 +69,7 @@ import { TextSlicePipe } from './common/pipe/text-slice.pipe';
     ReactiveFormsModule,
     FormsModule,
     HttpModule,
+    BrowserAnimationsModule,
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production})
   ],
   providers: [
