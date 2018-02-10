@@ -1,7 +1,9 @@
 const axios = require('axios');
 
 getLatestCommit = (req,res)=>{
-    axios.get('https://api.github.com/repos/ssysm/starrysea-nextgen/git/refs/heads/master')
+    axios.get('https://api.github.com/repos/ssysm/starrysea-nextgen/git/refs/heads/master',{
+        timeout:1000
+    })
         .then((data)=>{
             res.status(200)
                 .json({
@@ -15,7 +17,6 @@ getLatestCommit = (req,res)=>{
             res.status(500)
                 .json({
                     success:false,
-                    response:err
                 })
         })
 };
@@ -35,8 +36,7 @@ getLatestVersion = (req,res)=>{
         .catch((err)=>{
             res.status(500)
                 .json({
-                    success:false,
-                    response:err
+                    success:false
                 })
         })
 };
