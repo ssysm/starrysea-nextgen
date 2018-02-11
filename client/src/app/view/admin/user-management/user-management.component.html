@@ -1,3 +1,47 @@
 <div class="container">
-
+  <button class="btn btn-primary" data-toggle="modal" data-target="#addUser" style="margin-top: 25px;">添加新用户</button>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">用户名</th>
+      <th scope="col">操作</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of userArr">
+      <td>{{user._id|textSlice:9}}</td>
+      <td>{{user.username|textSlice:12}}</td>
+      <td><a style="color: red;cursor: pointer;" (click)="deleteUser(user._id)">删除</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal fade" id="addUser" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">新管理员</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="createUser(f.value)" #f="ngForm" [formGroup]="addUserForm">
+          <div class="form-group">
+            <label for="username" class="col-form-label">用户名:</label>
+            <input type="text" formControlName="username" class="form-control disabled" name="username" id="username">
+          </div>
+          <div class="form-group">
+            <label for="password" class="col-form-label">密码:</label>
+            <input formControlName="password" type="text" class="form-control" name="password" id="password">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+            <button type="submit" class="btn btn-primary" *ngIf="addUserForm.valid">添加</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
