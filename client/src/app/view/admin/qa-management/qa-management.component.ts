@@ -20,7 +20,7 @@ export class QaManagementComponent implements OnInit {
   qaAnswerForm:FormGroup;
 
   ngOnInit() {
-    this.qaService.fetchAllQaList(1,99)
+    this.qaService.fetchAllQaList(1,999)
       .subscribe(data=>{
         this.qaList = data.json().response;
       });
@@ -44,7 +44,7 @@ export class QaManagementComponent implements OnInit {
           '',
           'success'
         );
-        this.qaService.fetchAllQaList(1,25)
+        this.qaService.fetchAllQaList(1,999)
           .subscribe(data=>{
             this.qaList = data.json().response;
           });
@@ -61,7 +61,15 @@ export class QaManagementComponent implements OnInit {
     this.qaService.deleteQa(uid)
       .subscribe(data=>{
         if(data.json().success){
-          location.reload()
+          swal(
+            '删除成功',
+            '',
+            'success'
+          );
+          this.qaService.fetchAllQaList(1,999)
+            .subscribe(data=>{
+              this.qaList = data.json().response;
+            });
         }else{
           swal(
             '错误',

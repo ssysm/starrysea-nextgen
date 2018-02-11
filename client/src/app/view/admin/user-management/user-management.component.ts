@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService} from "../../../service/auth.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 declare var $:any;
+declare var swal:any;
 @Component({
   selector: 'app-user-management',
   templateUrl: './user-management.component.html',
@@ -36,16 +37,28 @@ export class UserManagementComponent implements OnInit {
     this.authService.deleteUser(uid)
       .subscribe(data=>{
         if(data.json().success){
-          alert('删除成功');
+          swal(
+            '删除成功',
+            '',
+            'success'
+          );
           this.authService.getAllUsers()
             .subscribe(user=>{
               this.userArr = user.json().response;
             })
         }else{
-          alert('删除失败')
+          swal(
+            '删除失败',
+            '',
+            'error'
+          );
         }
       },error=>{
-        alert('删除失败')
+        swal(
+          '删除失败',
+          '',
+          'error'
+        );
       })
   }
 
@@ -53,14 +66,22 @@ export class UserManagementComponent implements OnInit {
     this.authService.createAccount(data)
       .subscribe(data=>{
         if(data.json().success){
-          alert('添加成功');
+          swal(
+            '添加成功',
+            '',
+            'success'
+          );
           $('#addUser').modal('hide');
           this.authService.getAllUsers()
             .subscribe(user=>{
               this.userArr = user.json().response;
             })
         }else{
-          alert('添加失败')
+          swal(
+            '添加失败',
+            '',
+            'error'
+          );
         }
       })
   }

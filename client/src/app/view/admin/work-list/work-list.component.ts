@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {WorkService} from "../../../service/work.service";
-
+declare var swal:any;
 @Component({
   selector: 'app-work-list',
   templateUrl: './work-list.component.html',
@@ -23,13 +23,28 @@ export class WorkListComponent implements OnInit {
     this.workService.deleteWork(uid)
       .subscribe(data=>{
         if(data.json().success){
-          alert('删除成功');
-          location.reload();
+          swal(
+            '删除成功',
+            '',
+            'success'
+          );
+          this.workService.fetchWorkList(1,999)
+            .subscribe(data=>{
+              this.workArr = data.json().response
+            })
         }else {
-          alert('删除失败');
+          swal(
+            '删除失败',
+            '',
+            'error'
+          );
         }
       },error=>{
-        alert('删除失败')
+        swal(
+          '删除失败',
+          '',
+          'error'
+        );
       })
   }
 }

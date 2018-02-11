@@ -3,6 +3,7 @@ import {FundingService} from "../../../service/funding.service";
 import {ActivityService} from "../../../service/activity.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 declare var $:any;
+declare var swal:any;
 @Component({
   selector: 'app-funding-management',
   templateUrl: './funding-management.component.html',
@@ -11,7 +12,7 @@ declare var $:any;
 export class FundingManagementComponent implements OnInit {
 
   constructor(
-    private activityServicce:ActivityService,
+    private activityService:ActivityService,
     private fundingService:FundingService
   ) { }
 
@@ -21,10 +22,10 @@ export class FundingManagementComponent implements OnInit {
 
   fundRecordForm:FormGroup;
   ngOnInit() {
-    this.activityServicce.fetchActivityList(1,99)
+    this.activityService.fetchActivityList(1,99)
       .subscribe(activity=>{
         this.fundSelectArr = activity.json().response
-      })
+      });
     this.fundRecordForm = new FormGroup({
       activity_id:new FormControl('',[
         Validators.required
@@ -50,20 +51,40 @@ export class FundingManagementComponent implements OnInit {
     this.fundingService.deleteFundRecord(activity_id,uid)
       .subscribe(data=>{
         if(data.json().success){
-          alert('删除成功');
-          location.reload();
+          swal(
+            '删除成功',
+            '',
+            'success'
+          );
+          this.updateFundTable()
         }else{
-          alert('删除失败');
+          swal(
+            '删除失败',
+            '',
+            'error'
+          );
         }
       },error=>{
-        alert('删除失败')
+        swal(
+          '删除失败',
+          '',
+          'error'
+        );
       })
   }
   addFund(data){
     this.fundingService.createFundRecord(data)
       .subscribe(data=>{
+        swal(
+          '添加成功',
+          '',
+          'success'
+        );
+        this.fundRecordForm.controls.name.reset();
+        this.fundRecordForm.controls.amount.reset();
+        this.fundRecordForm.controls.message.reset();
         $('#addFund').modal('hide');
-        location.reload();
+        this.updateFundTable()
       })
   }
 

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivityService} from "../../../service/activity.service";
-
+declare var swal:any;
 @Component({
   selector: 'app-activity-list',
   templateUrl: './activity-list.component.html',
@@ -23,13 +23,28 @@ export class ActivityListComponent implements OnInit {
     this.activityService.deleteActivity(uid)
       .subscribe(data=>{
         if(data.json().success){
-          alert('删除成功');
-          location.reload();
+          swal(
+            '删除成功',
+            '',
+            'success'
+          );
+          this.activityService.fetchActivityList(1,999)
+            .subscribe(data=>{
+              this.activityArr = data.json().response
+            })
         }else {
-          alert('删除失败');
+          swal(
+            '删除失败',
+            '',
+            'error'
+          );
         }
       },error=>{
-        alert('删除失败')
+        swal(
+          '删除失败',
+          '',
+          'error'
+        );
       })
   }
 

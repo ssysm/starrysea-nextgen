@@ -10,9 +10,9 @@
   </thead>
   <tbody>
   <tr *ngFor="let activity of activityArr">
-    <th scope="row">{{activity._id}}</th>
-    <td><a routerLink="/activity/detail/{{activity._id}}">{{activity.name}}</a></td>
-    <td>{{activity.summary}}</td>
+    <th scope="row">{{activity._id|textSlice:6}}</th>
+    <td><a routerLink="/activity/detail/{{activity._id}}">{{activity.name|textSlice:8}}</a></td>
+    <td>{{activity.summary|textSlice:12}}</td>
     <td><a id="delete-activity-{{activity._id}}" style="color: red" (click)="deleteActivity(activity._id)">删除</a></td>
   </tr>
   </tbody>
