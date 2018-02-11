@@ -4,6 +4,7 @@ module.exports={
         "http://localhost:4200",
         "http://localhost:3000",
         "https://starrysea.org",
+        "https://www.starrysea.org",
         "http://www.starrysea.top"
     ],
 };

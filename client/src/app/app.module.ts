@@ -38,6 +38,8 @@ import { QaManagementComponent } from './view/admin/qa-management/qa-management.
 import { TextSlicePipe } from './common/pipe/text-slice.pipe';
 import { SpinnerComponent } from './view/partical/spinner/spinner.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { WorkListComponent } from './view/admin/work-list/work-list.component';
+import { ActivityListComponent } from './view/admin/activity-list/activity-list.component';
 
 
 @NgModule({
@@ -62,6 +64,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     QaManagementComponent,
     TextSlicePipe,
     SpinnerComponent,
+    WorkListComponent,
+    ActivityListComponent,
   ],
   imports: [
     BrowserModule,

@@ -37,14 +37,18 @@ export class ActivityComponent implements OnInit,OnDestroy {
   }
 
   getContent(){
-    $('app-activity').scroll(()=>{
+    $(window).scroll(()=>{
       if ($(document).height() - $(window).height() == $(window).scrollTop()) {
         this.loading = true;
         this.page = this.page+1;
         this.activityService.fetchActivityList(this.page,this.limit)
           .subscribe(data=>{
-            for(var i = 0;i < data.json().response.length;i++){
-              this.activityArr.push(data.json().response[i])
+            if(data.json().response.length == 0){
+              $(window).unbind('scroll')
+            }else {
+              for (var i = 0; i < data.json().response.length; i++) {
+                this.activityArr.push(data.json().response[i])
+              }
             }
             this.loading = false;
           })

@@ -91,7 +91,47 @@ userStatus = (req,res)=>{
     }
 
 };
+//Get All Users
+//@return: JSON Array;
+getUsers = (req,res)=>{
+    User.find({},["username","admin"],(err,docs)=>{
+        if(err){
+            res.status(500).json({
+                success:false,
+                response:err
+            })
+        }else {
+            res.status(200).json({
+                success: true,
+                response: docs
+            })
+        }
+    })
+};
+//Delete User
+//@body:uid
+//@return: JSON Object
+deleteUser = (req,res)=>{
+    var {uid} = req.body;
+    User.remove({
+        _id:mongoose.Types.ObjectId(uid)
+    },(err,docs)=>{
+        if(err){
+            res.status(500).json({
+                success:false,
+                response:err
+            })
+        }else {
+            res.status(200).json({
+                success: true,
+                response: docs
+            })
+        }
+    })
+};
 
 module.exports.createUser = createUser;
 module.exports.login = login;
 module.exports.userStatus = userStatus;
+module.exports.getUsers = getUsers;
+module.exports.deleteUser = deleteUser;

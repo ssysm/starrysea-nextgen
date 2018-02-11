@@ -67,3 +67,26 @@ GET /users/status
 }
 ```
 
+### 删除一个管理员
+
+删除一个管理员 **需要管理员权限**
+
+```endpoint
+DELETE /users/delete
+```
+
+属性 | 介绍
+---|---
+`uid` | (必填) 对象id
+
+#### Example response
+
+```json
+{
+  "success":true,
+   "response":{
+    "n":1,
+    "ok":1
+   }
+}
+```

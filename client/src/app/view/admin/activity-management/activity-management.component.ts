@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivityService} from "../../../service/activity.service";
-
+declare var swal:any;
 @Component({
   selector: 'app-activity-management',
   templateUrl: './activity-management.component.html',
@@ -54,10 +54,18 @@ export class ActivityManagementComponent implements OnInit {
     const formModel = this.prepare();
     this.activityService.createActivity(formModel)
       .subscribe(data=>{
-        alert('添加成功');
+        swal(
+          '添加成功',
+          '',
+          'success'
+        );
         this.activityForm.reset();
       },error=>{
-        alert('添加失败');
+        swal(
+          '添加失败',
+          '',
+          'error'
+        );
       })
   }
 

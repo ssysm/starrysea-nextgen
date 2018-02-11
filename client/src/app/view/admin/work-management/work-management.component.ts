@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {WorkService} from "../../../service/work.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 declare var $: any;
+declare var swal:any;
 @Component({
   selector: 'app-work-management',
   templateUrl: './work-management.component.html',
@@ -58,10 +59,18 @@ export class WorkManagementComponent implements OnInit {
       .subscribe(data=>{
         if(data.json().success){
           this.workForm.reset();
-          alert('添加成功');
+          swal(
+            '添加成功',
+            '已添加',
+            'success'
+          )
         }
       },error=>{
-        alert('添加失败');
+        swal(
+          '添加失败',
+          '无法添加，可能是一个服务器错误，请稍后重试',
+          'error'
+        )
       })
   }
 
