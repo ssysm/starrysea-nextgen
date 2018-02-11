@@ -35,6 +35,8 @@ createWork = (req,res)=>{
 fetchWork = (req,res)=>{
     "use strict";
     var { page,limit} = req.query;
+    var page = parseInt(page);
+    var limit = parseInt(limit);
     works.find({},["name","summary","file.cover"],(err,docs)=>{
         if(err){
             res.status(500).json({

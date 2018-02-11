@@ -31,10 +31,10 @@ export class NotFoundComponent implements OnInit {
 
   digCucuImg(){
     swal({
-      title: "Are you sure?",
-      text: "The image might not suitable for viewing in public",
+      title: "Warning!",
+      text: "The image might contain NSFW content",
       icon: "warning",
-      buttons: [true, "Yes!"]
+      buttons: [true, "Continue"]
     })
       .then((result) => {
         if (result) {
