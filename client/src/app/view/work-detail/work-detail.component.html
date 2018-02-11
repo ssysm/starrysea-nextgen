@@ -15,8 +15,8 @@
   </div>
   <hr>
   <div class="row"  *ngFor="let image of workData.file.images">
-    <div class="col-sm-12">
-      <img src="{{apiBase+'/static/work/'+image.filename}}" alt="" class="img-fluid">
+    <div class="col-sm-12 text-center">
+      <img src="{{apiBase+'/static/work/'+image.filename}}" alt="" class="img-fluid workImg">
     </div>
   </div>
 </div>

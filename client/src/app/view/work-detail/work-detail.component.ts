@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {WorkService} from "../../service/work.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {environment} from "../../../environments/environment";
@@ -39,7 +39,6 @@ export class WorkDetailComponent implements OnInit {
         }
       },error=>{
         this.router.navigate(['/','404'])
-      })
+      });
   }
-
 }
