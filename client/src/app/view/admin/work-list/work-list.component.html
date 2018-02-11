@@ -1,0 +1,19 @@
+<a routerLink="/admin/work" class="btn btn-primary">添加新作品</a>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">名称</th>
+    <th scope="col">简介</th>
+    <th scope="col">操作</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let work of workArr">
+    <th scope="row">{{work._id}}</th>
+    <td><a routerLink="/work/detail/{{work._id}}">{{work.name}}</a></td>
+    <td>{{work.summary}}</td>
+    <td><a id="delete-work-{{work._id}}" style="color: red" (click)="deleteWork(work._id)">删除</a></td>
+  </tr>
+  </tbody>
+</table>

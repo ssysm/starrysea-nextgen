@@ -1,0 +1,19 @@
+<a routerLink="/admin/activity" class="btn btn-primary">添加新活动</a>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">名称</th>
+    <th scope="col">简介</th>
+    <th scope="col">操作</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let activity of activityArr">
+    <th scope="row">{{activity._id}}</th>
+    <td><a routerLink="/activity/detail/{{activity._id}}">{{activity.name}}</a></td>
+    <td>{{activity.summary}}</td>
+    <td><a id="delete-activity-{{activity._id}}" style="color: red" (click)="deleteActivity(activity._id)">删除</a></td>
+  </tr>
+  </tbody>
+</table>
