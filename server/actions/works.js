@@ -8,6 +8,7 @@ createWork = (req,res)=>{
     var data = {
         name,
         summary,
+        created:Date.now(),
         file:{
             cover:req.files['cover'][0].filename,
             pdf:req.files['pdf'][0].filename,
