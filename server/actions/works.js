@@ -37,7 +37,7 @@ fetchWork = (req,res)=>{
     var { page,limit} = req.query;
     var page = parseInt(page);
     var limit = parseInt(limit);
-    works.find({}).sort({created:-1}).exec(["name","summary","file.cover"],(err,docs)=>{
+    works.find({}).sort({"date.created":-1}).exec(["name","summary","file.cover"],(err,docs)=>{
         if(err){
             res.status(500).json({
                 success:false,

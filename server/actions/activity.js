@@ -46,7 +46,7 @@ createActivity = (req,res)=>{
 fetchActivity = (req,res)=>{
     "use strict";
     var { page,limit} = req.query;
-    Activity.find({}).sort({_id:-1}).exec(["name","summary","cover"],(err,docs)=>{
+    Activity.find({}).sort({created:-1}).exec(["name","summary","cover"],(err,docs)=>{
         if(err){
             res.status(500).json({
                 success:false,
