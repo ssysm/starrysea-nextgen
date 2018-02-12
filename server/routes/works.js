@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const multer  = require('multer');
+const mime = require('mime');
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         var dest = 'public/work/';
         cb(null, dest)
     },
     filename: function (req, file, cb) {
-        cb(null, file.fieldname + '-' + Date.now()+Math.floor(Math.random()*1000));
+        cb(null, file.fieldname + '-' + Date.now()+'-'+Math.floor(Math.random()*1000)+'.'+mime.getExtension(file.mimetype));
     }
 });
 const upload = multer({ storage: storage });
