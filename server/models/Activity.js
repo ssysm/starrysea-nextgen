@@ -22,7 +22,7 @@ const schema = mongoose.Schema({
     date:{
         created:{
             type:Date,
-            default:Date.now()
+            required:true
         },
         endTime:{
             type:Date,
