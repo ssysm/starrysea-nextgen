@@ -9,7 +9,7 @@ const mongoose = require('mongoose');
 createActivity = (req,res)=>{
     "use strict";
     var { name,content,summary,endTime} =  req.body;
-    const data = {name, content, summary,date:{endTime},cover:req.file.filename};
+    const data = {name, content, summary,date:{created:Date.now(),endTime},cover:req.file.filename};
     Activity.create(data,(err,docs)=>{
         if(err){
             res.status(500).json({
@@ -46,7 +46,7 @@ createActivity = (req,res)=>{
 fetchActivity = (req,res)=>{
     "use strict";
     var { page,limit} = req.query;
-    Activity.find({},["name","summary","cover"],(err,docs)=>{
+    Activity.find({}).sort({_id:-1}).exec(["name","summary","cover"],(err,docs)=>{
         if(err){
             res.status(500).json({
                 success:false,

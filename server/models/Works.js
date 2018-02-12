@@ -23,7 +23,7 @@ const schema = mongoose.Schema({
     },
     created:{
         type:Date,
-        default:Date.now()
+        required:true
     },
     view:{
         type:Number,
