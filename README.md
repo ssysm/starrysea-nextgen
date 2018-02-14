@@ -37,4 +37,7 @@ Starrysea International Ver.
  - `npm install`
  - `npm run build`
  - Compiled File is in `dist` folder
- 
+
+## Error Reporing
+
+Issues and PR are welcomed :)  
