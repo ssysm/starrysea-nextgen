@@ -18,7 +18,7 @@ const workUpload = upload.fields([
     { name: 'images', maxCount: 32 }
     ]);
 const { checkAdminExpress } = require('../actions/guard');
-const { createWork,fetchWork,viewWork,deleteWork }  = require('../actions/works');
+const { createWork,fetchWork,viewWork,deleteWork }  = require('../actions/work');
 
 router.get('/',fetchWork);
 
