@@ -4,14 +4,14 @@
   "description": "新一代星之海官网",
   "scripts": {
     "test": "echo \"Welcome to Starrysea-NextGen Project!\" && exit 0",
-    "start:server":"npm start --prefix=server",
-    "start:client":"npm start --prefix=client",
-    "start:docs":"npm start --prefix=docs",
-    "dev:server":"npm run dev --prefix=server",
-    "build:client":"npm run build --prefix=client",
-    "build:docs" : "npm run build --prefix=docs",
+    "start:server": "npm start --prefix=server",
+    "start:client": "npm start --prefix=client",
+    "start:docs": "npm start --prefix=docs",
+    "dev:server": "npm run dev --prefix=server",
+    "build:client": "npm run build --prefix=client",
+    "build:docs": "npm run build --prefix=docs",
     "test:docs": "npm run test --prefix=docs",
-    "test:client":"npm run test --prefix=client"
+    "test:client": "npm run test --prefix=client"
   },
   "repository": {
     "type": "git",
