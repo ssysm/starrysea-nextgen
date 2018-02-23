@@ -1,7 +1,7 @@
 const express = require('express');
 const axios = require('axios');
 
-const appUri = "https://starrysea.org/"
+const appUri = "https://starrysea.org/";
 const renderUri = "http://localhost:8080/render";
 
 const app = express();
