@@ -6,7 +6,7 @@
     <div class="col-md-7 contentWrap" ><p [innerHTML]="content"></p>
       <img src="{{apiBase+'/static/activity/'+activityData.cover}}" class="img-fluid" alt="">
     </div>
-    <div class="col-md-5 contentWrap">
+    <div class="col-md-5 contentWrap fundingTable">
       <table class="table">
         <thead>
           <tr>
@@ -14,11 +14,11 @@
             <th scope="col">Amount</th>
           </tr>
         </thead>
-        <tbody>
-        <tr *ngFor="let fund of fundArr">
-          <td>{{fund.name}}</td>
-          <td>{{fund.amount}}</td>
-        </tr>
+        <tbody class="fundingDisplay">
+          <tr *ngFor="let fund of fundArr">
+            <td>{{fund.name}}</td>
+            <td>{{fund.amount}}</td>
+          </tr>
         </tbody>
       </table>
     </div>

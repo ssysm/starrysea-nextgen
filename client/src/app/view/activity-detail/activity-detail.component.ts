@@ -1,4 +1,4 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {AfterContentInit, AfterViewChecked, Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivityService} from "../../service/activity.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FundingService} from "../../service/funding.service";
@@ -10,7 +10,7 @@ declare var $:any;
   templateUrl: './activity-detail.component.html',
   styleUrls: ['./activity-detail.component.css']
 })
-export class ActivityDetailComponent implements OnInit,OnDestroy {
+export class ActivityDetailComponent implements OnInit,OnDestroy,AfterViewChecked {
 
   constructor(
     private activityService:ActivityService,
@@ -28,7 +28,7 @@ export class ActivityDetailComponent implements OnInit,OnDestroy {
   content:String;
 
   page:number = 1;
-  limit:number = 20;
+  limit:number = 999;
 
   loading: Boolean;
 
@@ -47,7 +47,7 @@ export class ActivityDetailComponent implements OnInit,OnDestroy {
           this.fundingService.fetchFundingList(this.activityId,this.page,this.limit)
             .subscribe(funding=>{
               this.fundArr = funding.json().response.record;
-            })
+            });
           this.getContent();
         }else{
           this.router.navigate(['/','404'])
@@ -55,6 +55,18 @@ export class ActivityDetailComponent implements OnInit,OnDestroy {
       },error=>{
         this.router.navigate(['/','404'])
       })
+  }
+
+  ngAfterViewChecked(): void {
+
+    if ( this._tableLoaded() ) {
+      this.fundTableScroll();
+    }
+  }
+
+    _tableLoaded(): boolean {
+      var $el = $(".fundingTable");
+    return $el.length > 0;
   }
 
   getContent(){
@@ -75,6 +87,20 @@ export class ActivityDetailComponent implements OnInit,OnDestroy {
           })
       }
     })
+  }
+
+  fundTableScroll(){
+    var $el = $(".fundingTable");
+    function anim() {
+      var st = $el.scrollTop();
+      var sb = $el.prop("scrollHeight")-$el.innerHeight();
+      $el.animate({scrollTop: st<sb/2 ? sb : 0}, 75000, "linear", anim);
+    }
+    function stop(){
+      $el.stop();
+    }
+    anim();
+    $el.hover(stop, anim);
   }
 
   ngOnDestroy(){

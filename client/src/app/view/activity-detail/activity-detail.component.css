@@ -3,7 +3,7 @@
   border: solid 1px #0b97c4;
   border-radius: 5px;
 }
-.table{
-  max-height: 100%;
-  overflow-y: scroll;
+.fundingTable{
+  max-height: 85vh;
+  overflow-y: hidden;
 }
