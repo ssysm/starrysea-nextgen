@@ -10,7 +10,7 @@
     <tbody *ngFor="let qa of qaList">
     <tr>
       <td>{{qa.question}}</td>
-      <td>{{qa.created | date : 'yyyy/mm/dd HH:mm'}}</td>
+      <td>{{qa.created | date : 'yyyy/MM/dd HH:mm'}}</td>
       <td>
         <button class="btn btn-info" (click)="cQaId=qa._id" *ngIf="!qa.answered" data-toggle="modal" data-value="{{qa._id}}" data-target="#qaAnswerBox">回答</button>
         <a (click)="deleteQa(qa._id)" style="cursor: pointer;color:red">删除</a>

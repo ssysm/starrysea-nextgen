@@ -2,7 +2,6 @@
 <table class="table">
   <thead>
   <tr>
-    <th scope="col">#</th>
     <th scope="col">名称</th>
     <th scope="col">简介</th>
     <th scope="col">操作</th>
@@ -10,9 +9,8 @@
   </thead>
   <tbody>
   <tr *ngFor="let work of workArr">
-    <th scope="row">{{work._id|textSlice:6}}</th>
-    <td><a routerLink="/work/detail/{{work._id}}">{{work.name|textSlice:8}}</a></td>
-    <td>{{work.summary|textSlice:10}}</td>
+    <td><a routerLink="/work/detail/{{work._id}}">{{work.name}}</a></td>
+    <td>{{work.summary}}</td>
     <td><a id="delete-work-{{work._id}}" style="color: red" (click)="deleteWork(work._id)">删除</a></td>
   </tr>
   </tbody>
