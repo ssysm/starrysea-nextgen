@@ -41,7 +41,7 @@ export class FundingManagementComponent implements OnInit {
   }
 
   updateFundTable(){
-    this.fundingService.fetchFundingList(this.fundId)
+    this.fundingService.fetchFundingList(this.fundId,1,999)
       .subscribe(data=>{
         this.fundArr = data.json().response.record
       })

@@ -9,9 +9,9 @@ export class FundingService {
     private http:Http
   ) { }
 
-  fetchFundingList(uid:String){
+  fetchFundingList(uid:String,page:Number,limit:Number){
     return this.http
-      .get(environment.apiBase+'/funding/activity?activity_id='+uid)
+      .get(environment.apiBase+'/funding/activity?activity_id='+uid+'&page='+page+'&limit='+limit)
   }
 
   createFundRecord(data){

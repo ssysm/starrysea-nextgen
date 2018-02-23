@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivityService} from "../../service/activity.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {FundingService} from "../../service/funding.service";
 import {environment} from "../../../environments/environment";
 import {Meta, Title} from "@angular/platform-browser";
-
+declare var $:any;
 @Component({
   selector: 'app-activity-detail',
   templateUrl: './activity-detail.component.html',
   styleUrls: ['./activity-detail.component.css']
 })
-export class ActivityDetailComponent implements OnInit {
+export class ActivityDetailComponent implements OnInit,OnDestroy {
 
   constructor(
     private activityService:ActivityService,
@@ -26,6 +26,12 @@ export class ActivityDetailComponent implements OnInit {
   apiBase:string = environment.apiBase;
   fundArr:Array<any>;
   content:String;
+
+  page:number = 1;
+  limit:number = 20;
+
+  loading: Boolean;
+
   ngOnInit() {
     this.activityId = this.route.snapshot.params['id'];
     this.activityService.getActivity(this.activityId)
@@ -38,16 +44,41 @@ export class ActivityDetailComponent implements OnInit {
           this.metaService.updateTag({content: data.json().response.name+' - Starry Sea Volunteers Association'}, "property='og:title'");
           this.metaService.updateTag({content: data.json().response.summary}, "property='og:description'");
           this.metaService.updateTag({content: data.json().response.summary}, "name='description'");
-          this.fundingService.fetchFundingList(this.activityId)
+          this.fundingService.fetchFundingList(this.activityId,this.page,this.limit)
             .subscribe(funding=>{
               this.fundArr = funding.json().response.record;
             })
+          this.getContent();
         }else{
           this.router.navigate(['/','404'])
         }
       },error=>{
         this.router.navigate(['/','404'])
       })
+  }
+
+  getContent(){
+    $(window).scroll(()=>{
+      if ($(document).height() - $(window).height() == $(window).scrollTop()) {
+        this.loading = true;
+        this.page = this.page+1;
+        this.fundingService.fetchFundingList(this.activityId,this.page,this.limit)
+          .subscribe(data=>{
+            if(data.json().response.record.length == 0){
+              $(window).unbind('scroll')
+            }else {
+              for (var i = 0; i < data.json().response.record.length; i++) {
+                this.fundArr.push(data.json().response.record[i])
+              }
+            }
+            this.loading = false;
+          })
+      }
+    })
+  }
+
+  ngOnDestroy(){
+    $(window).unbind('scroll');
   }
 
 }

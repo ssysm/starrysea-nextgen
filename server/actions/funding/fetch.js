@@ -1,11 +1,11 @@
 const Funding = require('../../models/Funding');
-//Fetch Funding By Activity Ids
+//Fetch Funding By Activity Ids and by page and limit
 //@method:GET
-//@query:activity_id
+//@query:activity_id,page,limit
 //@return: JSON Object w/ embed Array
 fetchFundById = (req,res)=>{
     "use strict";
-    var { activity_id } = req.query;
+    var { activity_id,page,limit } = req.query;
     Funding.findOne({
         activity_id
     },(err,docs)=>{
@@ -21,9 +21,12 @@ fetchFundById = (req,res)=>{
                     response:"No Match Found"
                 })
             }else{
+                const result = docs.record.slice(limit*(page-1),limit*(page-1)+limit);
                 res.status(200).json({
                     success:true,
-                    response:docs
+                    response:{
+                        record:result
+                    }
                 })
             }
         }
