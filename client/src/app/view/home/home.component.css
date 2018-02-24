@@ -12,6 +12,12 @@
   }
 }
 
+@media screen and (max-width: 991px) {
+  .title{
+    font-size: 2.54rem!important;
+  }
+}
+
 .intro{
   clear: both;
   background: #000000;

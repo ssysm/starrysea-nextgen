@@ -13,11 +13,11 @@ export class AdminGuardService {
 
   canActivate(route:ActivatedRouteSnapshot, state:RouterStateSnapshot):Observable<boolean>|boolean {
     let the_cookie = document.cookie.split(';');
-    let token = the_cookie[0].split("=")[1];
-    if(token || localStorage.getItem('loggedIn') == 'true'){
+    let token_name = the_cookie[0].split("=")[1];
+    if(token_name === "token" || localStorage.getItem('loggedIn') == 'true'){
       return true
     }else{
-      this.router.navigate(['/']);
+      this.router.navigate(['/404']);
       return false;
     }
 
