@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivityService} from "../../../service/activity.service";
+import {locale} from "../../../common/locale";
 declare var swal:any;
 @Component({
   selector: 'app-activity-management',
@@ -14,6 +15,8 @@ export class ActivityManagementComponent implements OnInit {
   ) { }
 
   activityForm:FormGroup;
+
+  localeArr: Array<any> = locale;
 
   myFile:File; /* property of File type */
   fileChange(files: any){
@@ -36,7 +39,10 @@ export class ActivityManagementComponent implements OnInit {
       ),
       endTime:new FormControl('',
         Validators.required
-      )
+      ),
+      locale:new FormControl('',[
+        Validators.required
+      ])
     })
   }
 

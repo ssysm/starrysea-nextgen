@@ -2,9 +2,10 @@ const works = require('../../models/Works');
 //Create New Work
 //@body:name,summary
 createWork = (req,res)=>{
-    var {name,summary} = req.body;
+    var {locale,name,summary} = req.body;
     "use strict";
     var data = {
+        locale,
         name,
         summary,
         created:Date.now(),

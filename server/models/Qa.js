@@ -2,6 +2,11 @@ const mongoose = require('mongoose');
 mongoose.connect(require('../config').database);
 
 const schema = mongoose.Schema({
+    locale:{
+        type:String,
+        required:true,
+        default:"en-US"
+    },
     question:{
         type:String,
         required:true,
