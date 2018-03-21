@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
       <trans-unit id="7537400384e171a67a02b09a084e4038797bcda5" datatype="html">
@@ -10,21 +9,21 @@
           <context context-type="sourcefile">app/view/home/home.component.ts</context>
           <context context-type="linenumber">5</context>
         </context-group>
-        <note priority="1" from="description">首页heading</note>
+        <note priority="1" from="description">首页heading</note><target>僕たちは星の海ボランティアギルド</target>
       </trans-unit>
       <trans-unit id="178a996a7933c2d7809c2662ab416d8cd751521c" datatype="html">
         <source>Dedicated to delivering the best of LoveLive Sunshine<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>Aqours events related support</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/home/home.component.ts</context>
           <context context-type="linenumber">9</context>
-        </context-group>
+        </context-group><target>LoveLive Sunshineの魅力を伝えることに一生懸命頑張ります。</target>
       </trans-unit>
       <trans-unit id="13e017157047cbf1a35692b5e164cbdff7e84ec2" datatype="html">
         <source>
     The main job of Starry Sea is to make and distribute
-    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>callbooks and other goods for Aqours&apos; activities throughout China,
+    <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>callbooks and other goods for Aqours' activities throughout China,
     <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>and provide volunteer service as much as possible at live events.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
-    Aim for that &quot;tenth person&quot;, strive to be the best!<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+    Aim for that "tenth person", strive to be the best!<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
     <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
     <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
     <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>About us<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
@@ -32,7 +31,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/home/home.component.ts</context>
           <context context-type="linenumber">11</context>
-        </context-group>
+        </context-group><target>星之海的主要工作是为Aqours在国内进行的活动制作callbook、应援物进行免费的发放，并在live时为大家提供力所能及的志愿服务。想要以那“第十人”为目标，努力做到最好！<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+        <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+        <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+        <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>关于我们<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
       </trans-unit>
       <trans-unit id="14b856e9e1546e5afa9efe172000e4dbbec01590" datatype="html">
         <source>Works Gallery</source>
@@ -40,7 +42,7 @@
           <context context-type="sourcefile">app/view/work/work.component.ts</context>
           <context context-type="linenumber">3</context>
         </context-group>
-        <note priority="1" from="description">作品展示</note>
+        <note priority="1" from="description">作品展示</note><target>作品を見る</target>
       </trans-unit>
       <trans-unit id="1801bfa6ba6eb7a02fd61bafb37e35f5d0aebfdc" datatype="html">
         <source>Learn More</source>
@@ -52,14 +54,14 @@
           <context context-type="sourcefile">app/view/activity/activity.component.ts</context>
           <context context-type="linenumber">14</context>
         </context-group>
-        <note priority="1" from="description">了解更多</note>
+        <note priority="1" from="description">了解更多</note><target>もっとを見る</target>
       </trans-unit>
       <trans-unit id="dd3b6c367381ddfa8f317b8e9b31c55368c65136" datatype="html">
         <source>Activities</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/activity/activity.component.ts</context>
           <context context-type="linenumber">3</context>
-        </context-group>
+        </context-group><target>イベントクラウドファンディング</target>
       </trans-unit>
       <trans-unit id="4c57ac0d5f8599114795f0b5e6f478befbe15966" datatype="html">
         <source>Work</source>
@@ -67,7 +69,7 @@
           <context context-type="sourcefile">app/view/partical/navbar/navbar.component.ts</context>
           <context context-type="linenumber">10</context>
         </context-group>
-        <note priority="1" from="description">作品</note>
+        <note priority="1" from="description">作品</note><target>作品展示</target>
       </trans-unit>
       <trans-unit id="f2005fa461c06dc2e04d8918bbabedf23604b5b7" datatype="html">
         <source>Activity</source>
@@ -75,7 +77,7 @@
           <context context-type="sourcefile">app/view/partical/navbar/navbar.component.ts</context>
           <context context-type="linenumber">13</context>
         </context-group>
-        <note priority="1" from="description">活动</note>
+        <note priority="1" from="description">活动</note><target>イベント</target>
       </trans-unit>
       <trans-unit id="847171f94c5e932a67df0c3b4d57e4e10d844b52" datatype="html">
         <source>About Us</source>
@@ -83,7 +85,7 @@
           <context context-type="sourcefile">app/view/partical/navbar/navbar.component.ts</context>
           <context context-type="linenumber">16</context>
         </context-group>
-        <note priority="1" from="description">关于我们</note>
+        <note priority="1" from="description">关于我们</note><target>星の海について</target>
       </trans-unit>
       <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
         <source>Name</source>
@@ -91,7 +93,7 @@
           <context context-type="sourcefile">app/view/activity-detail/activity-detail.component.ts</context>
           <context context-type="linenumber">13</context>
         </context-group>
-        <note priority="1" from="description">众筹人名字</note>
+        <note priority="1" from="description">众筹人名字</note><target>クラウドファンダ</target>
       </trans-unit>
       <trans-unit id="dfc2fb58e2a04ed944a4bd80f0a2087775134068" datatype="html">
         <source>Amount</source>
@@ -99,14 +101,14 @@
           <context context-type="sourcefile">app/view/activity-detail/activity-detail.component.ts</context>
           <context context-type="linenumber">14</context>
         </context-group>
-        <note priority="1" from="description">众筹金额</note>
+        <note priority="1" from="description">众筹金额</note><target>クラウドファンダ金額</target>
       </trans-unit>
       <trans-unit id="dc75033a5238fdc4f462212c847a45ba8018a3fd" datatype="html">
         <source>Download</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/work-detail/work-detail.component.ts</context>
           <context context-type="linenumber">11</context>
-        </context-group>
+        </context-group><target>ダウンロード</target>
       </trans-unit>
       <trans-unit id="bed551ab9a4aaf06a168844fb03b152fd94c6d7b" datatype="html">
         <source>404
@@ -116,14 +118,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/partical/not-found/not-found.component.ts</context>
           <context context-type="linenumber">3</context>
-        </context-group>
+        </context-group><target>404 <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>ページが見つかりません</target>
       </trans-unit>
       <trans-unit id="55495456808f85e6a8abdbd4e8ed7b578e3e13d3" datatype="html">
         <source>Please Try Again Later</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/partical/not-found/not-found.component.ts</context>
           <context context-type="linenumber">8</context>
-        </context-group>
+        </context-group><target>しばらく待ってやり直してください</target>
       </trans-unit>
       <trans-unit id="876b95eb19ba8a35d3024028b460dd9197de85d9" datatype="html">
         <source>Here is a random picture of cucu</source>
@@ -131,7 +133,7 @@
           <context context-type="sourcefile">app/view/partical/not-found/not-found.component.ts</context>
           <context context-type="linenumber">11</context>
         </context-group>
-        <note priority="1" from="description">醋图</note>
+        <note priority="1" from="description">醋图</note><target>ミスホシノウミ(男)の写真</target>
       </trans-unit>
       <trans-unit id="3010d168ff92a3604f1ebd44dd1768a0234c2791" datatype="html">
         <source>Show Picture</source>
@@ -139,7 +141,7 @@
           <context context-type="sourcefile">app/view/partical/not-found/not-found.component.ts</context>
           <context context-type="linenumber">12</context>
         </context-group>
-        <note priority="1" from="description">展示醋图</note>
+        <note priority="1" from="description">展示醋图</note><target>写真を表示する</target>
       </trans-unit>
       <trans-unit id="9c4b05b11e6a068d2aa7f18cfd1b0c39c219a3ea" datatype="html">
         <source>
@@ -147,77 +149,77 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/about/about.component.ts</context>
           <context context-type="linenumber">5</context>
-        </context-group>
+        </context-group><target>"麦克风还正常吗？Check，1，2，OK"</target>
       </trans-unit>
       <trans-unit id="acaa73268ddcf1346b59bd9266aa541071b540ad" datatype="html">
         <source>
     Hello everyone, we are Starry Sea Volunteers Association, dedicated to delivering the best of Love Live Sunshine
     Aqours events related support association in China!
     <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
-    Aim to be the &quot;Tenth Person&quot; of Aqours, we gather our own tiny strength together, made callbooks, leaflet, badges
+    Aim to be the "Tenth Person" of Aqours, we gather our own tiny strength together, made callbooks, leaflet, badges
     other souvenirs for Aqours events in China several times, trying hard to pass on the warmth of school idols, and
     leave a warm and precious memory for everyone who loves school idols!
   </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/about/about.component.ts</context>
           <context context-type="linenumber">7</context>
-        </context-group>
+        </context-group><target>大家好，我们是星之海志愿者公会，致力于为校园偶像在中国国内的Event应援、向各位传递LoveLove!Sunshine!!的魅力的组织！  想要成为Aqours的【第十人】，我们凭借各自微小的力量聚集在了一起，为Aqours在国内的活动多次制作了CallBook，宣传折页，徽章等纪念品，力图将校园偶像带给我们的温暖传递下去，为热爱校园偶像的每一个人留下一份温暖而珍贵的回忆！</target>
       </trans-unit>
       <trans-unit id="0f95e69d8071c5f6c4dd9934ed6df92c6836562b" datatype="html">
         <source>
     From the predecessor of the organization μ’S Final LoveLive Callbook and all the way to today, we made include but
-    not limited to Aqours&apos; 1st and 2nd Callbook and BML-SP&apos;s leaflets and other related commemorative badges, and we
+    not limited to Aqours' 1st and 2nd Callbook and BML-SP's leaflets and other related commemorative badges, and we
     still committed to providing with more beautiful, more diverse souvenirs!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/about/about.component.ts</context>
           <context context-type="linenumber">15</context>
-        </context-group>
+        </context-group><target>从组织前身的μ’S Final LoveLive Callbook制作组走来，我们制作了包括但不限于Aqours 的1st 与2nd 的CallBook以及BML-SP的宣传折页和其他相应的纪念徽章在内的应援物，并且还在致力于为大家提供更精美，更多样的纪念品！</target>
       </trans-unit>
       <trans-unit id="8ae10a8e9e1eec56a78946b0f77ee2f6c0e7f35b" datatype="html">
         <source>
     The cost of making a souvenir comes from the crowdfunding of the members, we keep a record of all the detailed
     expenses.Leave footprint of the stories you created with us!We Believe, with the joint efforts of everyone, we can
-    definitely create &quot;The new story that everyone accomplishes together&quot;!
+    definitely create "The new story that everyone accomplishes together"!
   </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/about/about.component.ts</context>
           <context context-type="linenumber">19</context>
-        </context-group>
+        </context-group><target>制作纪念品时的花销来自于成员们的众筹款，每一次的详细花销我们都记录在册，留下你与我们一同创造的故事的痕迹！我们相信，在大家共同的努力下，我们定能创造出【大家一起实现的崭新的故事】!</target>
       </trans-unit>
       <trans-unit id="04ea7905abbca56fa54c5b7809635a9fd08d28a5" datatype="html">
         <source>Any Questions?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/about/about.component.ts</context>
           <context context-type="linenumber">41</context>
-        </context-group>
+        </context-group><target>問題と建议？</target>
       </trans-unit>
       <trans-unit id="9fcd08ad6b5797e1b52cea79e6acc403f2ae3794" datatype="html">
         <source>Question Box</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/about/about.component.ts</context>
           <context context-type="linenumber">42</context>
-        </context-group>
+        </context-group><target>質問ボックス</target>
       </trans-unit>
       <trans-unit id="2bee93adbb8cde502af7c2144a0ce0c4c0edf223" datatype="html">
         <source>©2018-2019 StarrySea</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/partical/footer/footer.component.ts</context>
           <context context-type="linenumber">3</context>
-        </context-group>
+        </context-group><target>(c)2018-2019 Starrysea</target>
       </trans-unit>
       <trans-unit id="cb48221f84c43db65fd759e422500f8d183d88f9" datatype="html">
         <source>If you have any questions or any doubt</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/qa/qa.component.ts</context>
           <context context-type="linenumber">5</context>
-        </context-group>
+        </context-group><target>ご意見やご建议がありましたら、</target>
       </trans-unit>
       <trans-unit id="691d0f470358bffd35e9e4b05790e0b4aaf2ddbb" datatype="html">
         <source>Please write it in the question box</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/qa/qa.component.ts</context>
           <context context-type="linenumber">6</context>
-        </context-group>
+        </context-group><target>僕たちにメッセージを残してください</target>
       </trans-unit>
       <trans-unit id="23dd6eba2900352faebafdf83ab71005b5903479" datatype="html">
         <source>Your Message:</source>
@@ -225,14 +227,14 @@
           <context context-type="sourcefile">app/view/qa/qa.component.ts</context>
           <context context-type="linenumber">14</context>
         </context-group>
-        <note priority="1" from="description">您的问题</note>
+        <note priority="1" from="description">您的问题</note><target>メッセージ</target>
       </trans-unit>
       <trans-unit id="19e06ff9d6c5028a0b269a0d46b81d309be0bbcf" datatype="html">
         <source>The question is completely anonymous，Please do not ask question that do not meet the core values of socialism,谢谢茄子</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/qa/qa.component.ts</context>
           <context context-type="linenumber">16</context>
-        </context-group>
+        </context-group><target>質問は完全に匿名です。変な質問に言及しないように注意してください。。。</target>
       </trans-unit>
       <trans-unit id="2c5ff8fa9c9aaec93f97e37c9a0edcd797194573" datatype="html">
         <source>Send</source>
@@ -240,7 +242,7 @@
           <context context-type="sourcefile">app/view/qa/qa.component.ts</context>
           <context context-type="linenumber">18</context>
         </context-group>
-        <note priority="1" from="description">提问</note>
+        <note priority="1" from="description">提问</note><target>送信確認</target>
       </trans-unit>
       <trans-unit id="d2393c60798eb6a561a3a5a1f2829b32cf444f97" datatype="html">
         <source>Answered Questions</source>
@@ -249,6 +251,9 @@
           <context context-type="linenumber">24</context>
         </context-group>
         <note priority="1" from="description">已答问题</note>
+        <target>
+          回答した質問
+        </target>
       </trans-unit>
     </body>
   </file>
