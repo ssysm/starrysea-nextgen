@@ -40,6 +40,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {WorkListComponent} from './view/admin/work-list/work-list.component';
 import {ActivityListComponent} from './view/admin/activity-list/activity-list.component';
 import {LocaleService} from "./service/locale.service";
+import {CookieService} from "./service/cookie.service";
 
 
 @NgModule({
@@ -88,7 +89,8 @@ import {LocaleService} from "./service/locale.service";
       provide: BrowserXhr,
       useClass: cros,
     },
-    QaService
+    QaService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })
