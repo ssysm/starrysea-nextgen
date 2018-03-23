@@ -1,4 +1,5 @@
 export const locale = [
   "en-US",
-  "ja-JP"
+  "ja-JP",
+  "zh-CN"
 ];
