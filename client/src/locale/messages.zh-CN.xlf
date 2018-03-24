@@ -31,7 +31,11 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/home/home.component.ts</context>
           <context context-type="linenumber">11</context>
-        </context-group><target>星之海的主要工作是为Aqours在国内进行的活动制作callbook、应援物进行免费的发放，并在live时为大家提供力所能及的志愿服务。想要以那“第十人”为目标，努力做到最好！<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+        </context-group><target>星之海的主要工作是为Aqours在国内进行的活动制作callbook、应援物进行免费的发放，
+        <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+        并在live时为大家提供力所能及的志愿服务。
+        <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+        想要以那“第十人”为目标，努力做到最好！<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
         <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
         <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
         <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>关于我们<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
@@ -243,6 +247,14 @@
           <context context-type="linenumber">18</context>
         </context-group>
         <note priority="1" from="description">提问</note><target>确认送出</target>
+      </trans-unit>
+      <trans-unit id="d2393c60798eb6a561a3a5a1f2829b32cf444f97" datatype="html">
+        <source>Answered Questions</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/view/qa/qa.component.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <note priority="1" from="description">已答问题</note><target>已答问题</target>
       </trans-unit>
     </body>
   </file>
