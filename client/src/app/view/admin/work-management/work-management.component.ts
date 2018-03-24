@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {WorkService} from "../../../service/work.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {locale} from "../../../common/locale";
 declare var $: any;
 declare var swal:any;
 @Component({
@@ -16,6 +17,8 @@ export class WorkManagementComponent implements OnInit {
 
   workForm:FormGroup;
 
+  localeArr: Array<any> = locale;
+
   pdf:File;
   cover:File;
   images:Array<File>;
@@ -26,7 +29,10 @@ export class WorkManagementComponent implements OnInit {
       ),
       summary: new FormControl('',
         Validators.required
-      )
+      ),
+      locale:new FormControl('',[
+        Validators.required
+      ])
     })
   }
 

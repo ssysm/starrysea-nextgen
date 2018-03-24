@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var Ddos = require('ddos');
-var config = require('./config');
+var favicon = require('serve-favicon');
 //Import Routing
 var index = require('./routes/index');
 var users = require('./routes/users');
@@ -14,6 +14,7 @@ var works = require('./routes/works');
 var funding = require('./routes/funding');
 var version = require('./routes/version');
 var qa = require('./routes/qa');
+var config = require('./config');
 //Init Ddos Protection
 var ddos = new Ddos({burst:120, limit:800});
 
@@ -34,13 +35,11 @@ app.all('*', function(req, res, next) {
         res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS,PATCH");
         next();
     }else{
-        res.header("Access-Control-Allow-Origin", '*');
-        res.header("Access-Control-Allow-Headers", "Content-Type");
-        res.header("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS,PATCH");
         next();
     }
 });
 //Init Express Routing
+app.use(favicon(path.join(__dirname,'public','favicon.ico')));
 app.use('/static',express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/activity',activity);
@@ -60,8 +59,7 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-  console.log(err)
-  res.status(err.status || 500).send(err)
+  res.status(err.status || 500).send(err.toString())
 });
 
 module.exports = app;

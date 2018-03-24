@@ -5,6 +5,8 @@ module.exports={
         "http://localhost:3000",
         "https://starrysea.org",
         "https://www.starrysea.org",
-        "http://www.starrysea.top"
+        "https://cn.starrysea.org",
+        "https://jp.starrysea.org",
+        "http://www.starrysea.top",
     ],
 };

@@ -1,13 +1,22 @@
 const works = require('../../models/Works');
 //Fetch work by limit and page no.
-//@query: page,limit
+//@query: page,limit,locale
 //@return: JSON Object w/ Embed Array
 fetchWork = (req,res)=>{
     "use strict";
-    var { page,limit} = req.query;
+    var { locale,page,limit} = req.query;
     var page = parseInt(page);
     var limit = parseInt(limit);
-    works.find({}).sort({created:-1}).exec(["name","summary","file.cover"],(err,docs)=>{
+    if(!req.query.locale){
+        locale = "en-US"
+    }
+    works.find({
+        locale
+    }).sort({
+        created:-1
+    }).exec([
+        "name","summary","file.cover"
+    ],(err,docs)=>{
         if(err){
             res.status(500).json({
                 success:false,

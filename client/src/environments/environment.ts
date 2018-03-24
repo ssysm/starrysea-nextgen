@@ -5,5 +5,11 @@
 
 export const environment = {
   production: false,
-  apiBase:"http://localhost:3000"
+  apiBase:"http://localhost:3000",
+  cookieDomain:"localhost",
+  multiDomain:{
+    en:"http://localhost:4200",
+    jp:"http://localhost:4200",
+    cn:"http://localhost:4200"
+  }
 };

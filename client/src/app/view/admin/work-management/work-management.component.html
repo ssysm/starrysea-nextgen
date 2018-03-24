@@ -1,6 +1,12 @@
 <div class="container">
   <form [formGroup]="workForm" (ngSubmit)="createWork()">
     <div class="form-group">
+      <label for="locale">语言</label>
+      <select name="locale" id="locale" formControlName="locale">
+        <option  *ngFor="let lang of localeArr" [value]="lang">{{lang}}</option>
+      </select>
+    </div>
+    <div class="form-group">
       <label for="name">名称</label>
       <input formControlName="name" type="text" name="name" class="form-control" id="name" placeholder="名称">
     </div>

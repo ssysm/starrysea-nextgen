@@ -1,15 +1,15 @@
 <div class="container">
   <div class="text-center">
-    <p class="h1 text-thin">404
+    <p class="h1 text-thin" i18n>404
       <br>
       Page Not Found
     </p>
     <img src="/assets/img/error_dia.png" alt="Error" style="width: 25%;">
-    <p class="h2 text-thin">Please Try Again Later</p>
+    <p class="h2 text-thin" i18n>Please Try Again Later</p>
 
     <div style="border: solid #fafafa 1px; border-radius: 5px" >
-      <p class="text-thin">Here is a random picture of cucu</p>
-      <button class="btn btn-info" *ngIf="nsfwButton" (click)="digCucuImg()">Show Picture</button>
+      <p class="text-thin" i18n="醋图">Here is a random picture of cucu</p>
+      <button class="btn btn-info" *ngIf="nsfwButton" (click)="digCucuImg()" i18n="展示醋图">Show Picture</button>
         <img
           *ngIf="cucuImg"
           [src]="'data:image/png;base64,'+cucuImg"

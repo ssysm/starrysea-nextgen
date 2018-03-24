@@ -7,8 +7,8 @@ const Funding = require('../../models/Funding');
 //@return:JSON Object
 createActivity = (req,res)=>{
     "use strict";
-    var { name,content,summary,endTime} =  req.body;
-    const data = {name, content, summary,date:{created:Date.now(),endTime},cover:req.file.filename};
+    var { locale,name,content,summary,endTime} =  req.body;
+    const data = {locale,name, content, summary,date:{created:Date.now(),endTime},cover:req.file.filename};
     Activity.create(data,(err,docs)=>{
         if(err){
             res.status(500).json({

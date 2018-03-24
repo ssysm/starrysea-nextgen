@@ -2,12 +2,21 @@
 const Activity = require('../../models/Activity');
 //Fetch activity by limit and page no.
 //@method:GET
-//@query: page,limit
+//@query: page,limit,locale
 //@return: JSON Object w/ Embed Array
 fetchActivity = (req,res)=>{
     "use strict";
-    var { page,limit} = req.query;
-    Activity.find({}).sort({"date.created":-1}).exec(["name","summary","cover"],(err,docs)=>{
+    var { locale,page,limit} = req.query;
+    if(!locale){
+        locale = "en-US"
+    }
+    Activity.find({
+        locale
+    }).sort({
+        "date.created":-1
+    }).exec([
+        "name","summary","cover"
+    ],(err,docs)=>{
         if(err){
             res.status(500).json({
                 success:false,
