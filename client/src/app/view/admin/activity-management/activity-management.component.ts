@@ -52,6 +52,7 @@ export class ActivityManagementComponent implements OnInit {
     form.append('summary',this.activityForm.get('summary').value);
     form.append('cover',this.myFile);
     form.append('content',this.activityForm.get('content').value);
+    form.append('locale',this.activityForm.get('locale').value);
     form.append('endTime',this.activityForm.get('endTime').value);
     return form
   }

@@ -53,6 +53,7 @@ export class WorkManagementComponent implements OnInit {
       formData.append("images", files[i], files[i]['name']);
     }
     formData.append("pdf", this.pdf);
+    formData.append("locale",this.workForm.get('locale').value);
     formData.append('cover', this.cover);
     formData.append('name', this.workForm.get('name').value);
     formData.append('summary', this.workForm.get('summary').value);
