@@ -2,9 +2,10 @@ const express = require('express');
 const router = express.Router();
 const multer  = require('multer');
 const mime = require('mime');
+const path = require('path');
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        var dest = 'public/work/';
+        var dest = path.join(__dirname+'/../public/work');
         cb(null, dest)
     },
     filename: function (req, file, cb) {
