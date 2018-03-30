@@ -11,9 +11,9 @@ export class LocaleService {
 
   getUALang() : string{
     if(navigator.language){
-      return navigator.language
+      return navigator.language.toLowerCase();
     }else{
-      return 'en-US'
+      return 'en-us'
     }
   }
 
@@ -23,9 +23,9 @@ export class LocaleService {
 
   getLocale():string{
     if(this.cookie.getCookie("lang")===""){
-      return "en-US"
+      return "en-us"
     }else{
-      return this.cookie.getCookie("lang");
+      return this.cookie.getCookie("lang").toLowerCase();
     }
   }
 
@@ -39,15 +39,15 @@ export class LocaleService {
       }
       else {
         switch (this.cookie.getCookie("lang")) {
-          case "en-US":
+          case "en-us":
             window.location.replace(environment.multiDomain.en);
             this.cookie.setCookie("auto_jump", "true", 999);
             break;
-          case "ja-JP":
+          case "ja-jp":
             window.location.replace(environment.multiDomain.jp);
             this.cookie.setCookie("auto_jump", "true", 999);
             break;
-          case "zh-CN":
+          case "zh-cn":
             window.location.replace(environment.multiDomain.cn);
             this.cookie.setCookie("auto_jump", "true", 999);
             break;

@@ -4,8 +4,16 @@ const Qa = require('../../models/Qa');
 //@query:page,limit
 //@return: JSON Object || JSON Array
 fetchQa = (req,res)=>{
-    var { page,limit} = req.query;
-    Qa.find({answered:true},[],(err,docs)=>{
+    var { page,limit,locale} = req.query;
+    Qa.find({
+        $and:[
+            {
+                answered:true
+            },{
+                locale:locale
+            }
+        ]
+    },[],(err,docs)=>{
         if(err){
             res.status(500).json({
                 success:false,

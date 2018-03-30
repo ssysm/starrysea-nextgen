@@ -3,8 +3,9 @@ const Qa = require('../../models/Qa');
 //@body:question
 //@return:JSON Object
 createQa = (req,res)=>{
-    var { question } = req.body;
-    Qa.create({question},(err,docs)=>{
+    var { question,locale } = req.body;
+    var locale = locale.toLowerCase();
+    Qa.create({question,locale},(err,docs)=>{
         if(err){
             res.status(500).json({
                 success:false,

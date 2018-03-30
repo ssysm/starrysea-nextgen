@@ -7,8 +7,9 @@ fetchWork = (req,res)=>{
     var { locale,page,limit} = req.query;
     var page = parseInt(page);
     var limit = parseInt(limit);
+    var locale = locale.toLowerCase();
     if(!req.query.locale){
-        locale = "en-US"
+        locale = "en-us"
     }
     works.find({
         locale

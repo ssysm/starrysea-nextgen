@@ -163,7 +163,8 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/about/about.component.ts</context>
           <context context-type="linenumber">7</context>
-        </context-group><target>大家好，我们是星之海志愿者公会，致力于为校园偶像在中国国内的Event应援、向各位传递LoveLove!Sunshine!!的魅力的组织！  想要成为Aqours的【第十人】，我们凭借各自微小的力量聚集在了一起，为Aqours在国内的活动多次制作了CallBook，宣传折页，徽章等纪念品，力图将校园偶像带给我们的温暖传递下去，为热爱校园偶像的每一个人留下一份温暖而珍贵的回忆！</target>
+        </context-group><target>初めまして、僕たちは星の海ボランティアギルド、中国のラブライブイベントを応援して、ラブライブ！サンシャイン!!の魅力をみんなに伝えます！
+  Aqoursの「十」になりたいから、僕たちは自分たちの小さなパワで集めて、Aqours中国イベントのために、コル本、パンフレット、バッジを作た！スクールアイドルの幸せを伝えて、Aqoursを愛する皆様にいい思い出をなりたい！</target>
       </trans-unit>
       <trans-unit id="0f95e69d8071c5f6c4dd9934ed6df92c6836562b" datatype="html">
         <source>
