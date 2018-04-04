@@ -7,7 +7,9 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build:lang:cn": "ng build --prod --aot --i18nFile=src/locale/messages.zh-CN.xlf --i18nFormat=xlf --locale=zh-CN",
+    "build:lang:jp": "ng build --prod --aot --i18nFile=src/locale/messages.ja-JP.xlf --i18nFormat=xlf --locale=ja-JP"
   },
   "private": true,
   "dependencies": {
