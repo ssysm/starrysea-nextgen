@@ -5,7 +5,7 @@ const schema = mongoose.Schema({
     locale:{
         type:String,
         required:true,
-        default:"en-US"
+        default:"en-us"
     },
     question:{
         type:String,

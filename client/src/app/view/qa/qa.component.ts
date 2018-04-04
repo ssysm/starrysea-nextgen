@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {QaService} from "../../service/qa.service";
 import {Meta, Title} from "@angular/platform-browser";
+import {LocaleService} from "../../service/locale.service";
 declare var swal:any;
 @Component({
   selector: 'app-qa',
@@ -12,7 +13,8 @@ export class QaComponent implements OnInit {
   constructor(
     private qaService:QaService,
     private titleService:Title,
-    private metaService:Meta
+    private metaService:Meta,
+    private locale:LocaleService
   ) { }
 
   QaList:Array<any>;
@@ -31,7 +33,7 @@ export class QaComponent implements OnInit {
 
   askQuestion() {
     if (this.question) {
-      this.qaService.createQa({question: this.question})
+      this.qaService.createQa({question: this.question,locale:this.locale.getLocale()})
         .subscribe(data => {
           if (data.json().success) {
             swal(
