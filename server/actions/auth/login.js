@@ -21,7 +21,7 @@ login = (req,res)=>{
                     response:"No Match Record"
                 })
             }else{
-                res.status(200).cookie('token',btoa(docs._id)).json({
+                res.status(200).cookie('token',btoa(docs._id),{ httpOnly: true }).json({
                     success:true
                 })
             }

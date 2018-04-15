@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import {CookieService} from "./cookie.service";
 import {environment} from "../../environments/environment";
+import {ActivatedRoute} from "@angular/router";
 
 @Injectable()
 export class LocaleService {
 
   constructor(
-    private cookie:CookieService
+    private cookie:CookieService,
+    private router:ActivatedRoute
   ) { }
 
   getUALang() : string{
@@ -29,32 +31,34 @@ export class LocaleService {
     }
   }
 
-  onInit():void{
-    if(this.cookie.getCookie("lang")===""&&!this.cookie.getCookie("auto_jump")){
-      this.saveLocale();
-      this.onInit();
-    }else{
-      if(this.cookie.getCookie("auto_jump")==="true"){
+  onInit():void {
+    if (window.location.pathname === '/') {
+      if (this.cookie.getCookie("lang") === "" && !this.cookie.getCookie("auto_jump")) {
+        this.saveLocale();
+        this.onInit();
+      } else {
+        if (this.cookie.getCookie("auto_jump") === "true") {
 
-      }
-      else {
-        switch (this.cookie.getCookie("lang")) {
-          case "en-us":
-            window.location.replace(environment.multiDomain.en);
-            this.cookie.setCookie("auto_jump", "true", 999);
-            break;
-          case "ja-jp":
-            window.location.replace(environment.multiDomain.jp);
-            this.cookie.setCookie("auto_jump", "true", 999);
-            break;
-          case "zh-cn":
-            window.location.replace(environment.multiDomain.cn);
-            this.cookie.setCookie("auto_jump", "true", 999);
-            break;
-          default:
-            window.location.replace(environment.multiDomain.en);
-            this.cookie.setCookie("auto_jump", "true", 999);
-            break;
+        }
+        else {
+          switch (this.cookie.getCookie("lang")) {
+            case "en-us":
+              window.location.replace(environment.multiDomain.en);
+              this.cookie.setCookie("auto_jump", "true", 999);
+              break;
+            case "ja-jp":
+              window.location.replace(environment.multiDomain.jp);
+              this.cookie.setCookie("auto_jump", "true", 999);
+              break;
+            case "zh-cn":
+              window.location.replace(environment.multiDomain.cn);
+              this.cookie.setCookie("auto_jump", "true", 999);
+              break;
+            default:
+              window.location.replace(environment.multiDomain.en);
+              this.cookie.setCookie("auto_jump", "true", 999);
+              break;
+          }
         }
       }
     }

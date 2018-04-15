@@ -10,9 +10,9 @@
   <meta name="description" content="We Are Starry Sea Volunteers Association">
   <meta name="keywords" content="Starrysea,星之海,星之海志愿者公会,Starry Sea,Starry Sea Volunteers Association">
   <meta property="og:title" content="Starry Sea International"/>
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="/assets/icons/starrysea-512x512.png" />
-  <meta property="og:description" content="We Are Starry Sea Volunteers Association" />
+  <meta property="og:type" content="website"/>
+  <meta property="og:image" content="/assets/icons/starrysea-512x512.png"/>
+  <meta property="og:description" content="We Are Starry Sea Volunteers Association"/>
   <meta property="og:site_name" content="Starry Sea Volunteers Association"/>
   <meta name="robots" content="index, follow">
   <!--PWA Setting-->
@@ -21,30 +21,76 @@
   <meta name="msapplication-starturl" content="/">
   <meta name="theme-color" content="#409cc3">
   <link rel="manifest" href="/manifest.json">
-  <style>.splash{opacity: 0;position: fixed;height: 100%;width: 100%;margin-top: 15%;text-align: center;z-index: -1;font-family: Arial,"Times New Roman", sans-serif}  app-root:empty + .splash {opacity: 1;z-index: 100;}</style>
+  <style>
+    .splash {
+      opacity: 0;
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      margin-top: 15%;
+      text-align: center;
+      z-index: -1;
+      font-family: Arial, "Times New Roman", sans-serif
+    }
+
+    app-root:empty + .splash {
+      opacity: 1;
+      z-index: 100;
+    }
+
+    app-root:empty
+  </style>
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <meta name="google-site-verification" content="BkGuw2UpVXrEkAGSZA4e4uSMjeWCylBq2oYogj_0ZSI" />
+  <meta name="google-site-verification" content="BkGuw2UpVXrEkAGSZA4e4uSMjeWCylBq2oYogj_0ZSI"/>
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113481030-1"></script>
-  <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-113481030-1');</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    function isIE() {
+      var ua = window.navigator.userAgent;
+      var msie = ua.indexOf('MSIE '); // IE 10 or older
+      var trident = ua.indexOf('Trident/'); //IE 11
+
+      return (msie > 0 || trident > 0);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'UA-113481030-1');
+
+    window.onload = function () {
+      if (isIE()) {
+        document.write("<p>Sorry, your browser is not supported</p>" + "<p>抱歉，您的浏览器不受支持</p>" + "<p>申し訳ありません、ブラウザはサポートされていません</p>")
+      }
+    }
+  </script>
   <!--Angular Routing-->
   <base href="/">
 </head>
 <body>
-  <!--App Entry Point-->
-  <app-root></app-root>
-  <!--PWA Loading-->
-  <div class="splash">
-    <img src="/assets/img/starsea.png" alt="Starrysea Logo" style="width: 348px;height: auto;">
-    <h2>Starrysea International</h2>
-    <h3>Loading...</h3>
-  </div>
-  <!--No Script-->
-  <noscript>
-    <p>为了使用本网站的所有功能，您需要启用JavaScript。</p>
-    <p>For full functionality of this site it is necessary to enable JavaScript.</p>
-    <p>このWebサイトの全ての機能を利用するためにはJavaScriptを有効にする必要があります。</p>
-    <p>Para utilizar las funcionalidades completas de este sitio es necesario tener JavaScript habilitado.</p>
-    <p>Um den vollen Funktionsumfang dieser Webseite zu erfahren, benötigen Sie JavaScript.</p>
-  </noscript>
+<!--App Entry Point-->
+<app-root></app-root>
+<!--PWA Loading-->
+<div class="splash">
+  <img src="/assets/img/starsea.png" alt="Starrysea Logo" style="width: 348px;height: auto;">
+  <h2>Starrysea International</h2>
+  <h3>Loading...</h3>
+</div>
+<!--No Script-->
+<noscript>
+  <p>为了使用本网站的所有功能，您需要启用JavaScript。</p>
+  <p>For full functionality of this site it is necessary to enable JavaScript.</p>
+  <p>このWebサイトの全ての機能を利用するためにはJavaScriptを有効にする必要があります。</p>
+  <p>Para utilizar las funcionalidades completas de este sitio es necesario tener JavaScript habilitado.</p>
+  <p>Pour accéder à toutes les fonctionnalités de ce site, vous devez activer JavaScript.</p>
+  <p>Um den vollen Funktionsumfang dieser Webseite zu erfahren, benötigen Sie JavaScript.</p>
+  <p>Для полной функциональности этого сайта необходимо включить JavaScript.</p>
+  <p>Per avere a disposizione tutte le funzionalità di questo sito è necessario abilitare Javascript.</p>
+  <p>เพื่อการใช้งานที่เต็มที่ของเว็บไซต์นี้ จำเป็นต้องเปิดการใช้งาน JavaScript</p>
+  <p> للحصول على الوظائف الكاملة لهذا الموقع من الضروري تمكين جافا سكريبت.</p>
+</noscript>
 </body>
 </html>
