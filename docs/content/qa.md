@@ -9,6 +9,8 @@ POST /qa/ask
 属性 | 介绍
 ---|---
 `question` | (必填) 提问的问题
+`locale`| (必填)语言地区
+
 
 
 #### Example Response

@@ -15,6 +15,7 @@ POST /activity
 `summary` | (必填) 活动简介
 `endTime` | (必填) 结束时间
 `cover` | (必填(*文件*)) 封面文件
+`locale`| (必填)语言地区
 
 #### Example response
 
@@ -41,7 +42,7 @@ POST /activity
 按页面数和限制获取活动列表
 
 ```endpoint
-GET /activity?page={页面数}&limit={限制数量}
+GET /activity?page={页面数}&limit={限制数量}&locale={语言地区}
 ```
 
 #### Example response
