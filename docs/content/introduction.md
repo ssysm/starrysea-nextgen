@@ -13,3 +13,11 @@ API主机地址: `api.starrysea.org`
 活动静态文件地址: `api.starrysea.org/static/activity/`
 
 作品静态文件地址: `api.starrysea.org/static/work/`
+ 
+语言地区（默认en-us）:
+
+- en-us (英语)
+- zh-cn (中文)
+- ja-jp (日文)
+
+

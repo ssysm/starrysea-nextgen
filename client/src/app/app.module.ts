@@ -12,7 +12,6 @@ import {NotFoundComponent} from './view/partical/not-found/not-found.component';
 import {HttpModule, BrowserXhr} from "@angular/http";
 import {cros} from "./common/cros";
 import {FooterComponent} from './view/partical/footer/footer.component';
-import {VersionService} from "./service/version.service";
 import {environment} from "../environments/environment";
 import {SpinnerComponent} from './view/partical/spinner/spinner.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
@@ -37,7 +36,6 @@ import {CookieService} from "./service/cookie.service";
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production})
   ],
   providers: [
-    VersionService,
     LocaleService,
     {
       provide: BrowserXhr,

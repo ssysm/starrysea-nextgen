@@ -17,6 +17,8 @@ POST /work
 `cover` | (必填(*文件*)) 封面文件
 `pdf` | (必填(*文件*)) PDF文件
 `images` | (必填(*文件*)) 图片文件,最多32张
+`locale`| (必填)语言地区
+
 
 #### Example response
 
@@ -48,7 +50,7 @@ POST /work
 按页面数和限制获取作品列表
 
 ```endpoint
-GET /work?page={页面数}&limit={限制数量}
+GET /work?page={页面数}&limit={限制数量}&locale={语言地区}
 ```
 
 #### Example response

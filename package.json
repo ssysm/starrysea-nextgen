@@ -1,6 +1,6 @@
 {
   "name": "starrysea",
-  "version": "1.0.8",
+  "version": "1.1.1",
   "description": "新一代星之海官网",
   "scripts": {
     "test": "echo \"Welcome to Starrysea-NextGen Project!\" && exit 0",
@@ -21,7 +21,6 @@
     "starrysea"
   ],
   "author": "starrysea",
-  "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/ssysm/starrysea-nextgen/issues"
   },
