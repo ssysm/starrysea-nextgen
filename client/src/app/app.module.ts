@@ -2,7 +2,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {ServiceWorkerModule} from '@angular/service-worker';
 
-
 import {AppRoutingModule} from './app-routing.module';
 
 import {AppComponent} from './app.component';
@@ -17,6 +16,7 @@ import {SpinnerComponent} from './view/partical/spinner/spinner.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {LocaleService} from "./service/locale.service";
 import {CookieService} from "./service/cookie.service";
+import {MetaService} from "./service/meta.service";
 
 
 @NgModule({
@@ -41,7 +41,8 @@ import {CookieService} from "./service/cookie.service";
       provide: BrowserXhr,
       useClass: cros,
     },
-    CookieService
+    CookieService,
+    MetaService
   ],
   bootstrap: [AppComponent]
 })

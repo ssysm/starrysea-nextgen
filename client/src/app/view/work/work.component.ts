@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {WorkService} from "../../service/work.service";
 import {environment} from "../../../environments/environment";
-import {Meta, Title} from "@angular/platform-browser";
+import {MetaService} from "../../service/meta.service";
 declare var $:any;
 
 @Component({
@@ -13,8 +13,7 @@ export class WorkComponent implements OnInit, OnDestroy {
 
   constructor(
     private workService:WorkService,
-    private titleService:Title,
-    private metaService:Meta
+    private meta:MetaService
   ) { }
 
   workArr: Array<any>;
@@ -23,11 +22,7 @@ export class WorkComponent implements OnInit, OnDestroy {
   page: number = 1;
   loading:Boolean;
   ngOnInit() {
-    this.titleService.setTitle('Works Gallery - Starry Sea Volunteers Association');
-    this.metaService.updateTag({content:'/assets/icons/starrysea-512x512.png'}, "property='og:image'");
-    this.metaService.updateTag({content: 'Work Gallery - Starry Sea Volunteers Association'}, "property='og:title'");
-    this.metaService.updateTag({content: 'All Works from Starry Sea'}, "property='og:description'");
-    this.metaService.updateTag({content: 'All Works from Starry Sea'}, "name='description'");
+    this.meta.updateTag('Works Gallery - Starry Sea Volunteers Association','All Works from Starry Sea');
     this.workService.fetchWorkList(this.page,this.limit)
       .subscribe(data=>{
         this.workArr = data.json().response

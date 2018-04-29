@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
 import {CookieService} from "./cookie.service";
 import {environment} from "../../environments/environment";
-import {ActivatedRoute} from "@angular/router";
 
 @Injectable()
 export class LocaleService {
 
   constructor(
-    private cookie:CookieService,
-    private router:ActivatedRoute
+    private cookie:CookieService
   ) { }
 
   getUALang() : string{
@@ -17,6 +15,13 @@ export class LocaleService {
     }else{
       return 'en-us'
     }
+  }
+
+  selectLang(locale:string):void{
+    this.cookie.deleteCookie();
+    this.cookie.setCookie("lang",locale,9999);
+    this.cookie.setCookie("auto_redirect","select",9999);
+    this.onInit();
   }
 
   saveLocale():void{
@@ -31,34 +36,44 @@ export class LocaleService {
     }
   }
 
+  redirect(lang:string){
+    switch (lang) {
+      case "en-us":
+        window.location.replace(environment.multiDomain.en);
+        break;
+      case "ja-jp":
+        window.location.replace(environment.multiDomain.jp);
+        break;
+      case "zh-cn":
+        window.location.replace(environment.multiDomain.cn);
+        break;
+      default:
+        window.location.replace(environment.multiDomain.en);
+        break;
+    }
+  }
+  /*
+   语言选择，只检测初始path
+   @cookie:lang:语言
+   @cookie:auto_redirect:自动跳转(不仅是bool)
+   */
   onInit():void {
     if (window.location.pathname === '/') {
-      if (this.cookie.getCookie("lang") === "" && !this.cookie.getCookie("auto_jump")) {
+      if (this.cookie.getCookie("lang") === "" && !this.cookie.getCookie("auto_redirect")) {
         this.saveLocale();
         this.onInit();
       } else {
-        if (this.cookie.getCookie("auto_jump") === "true") {
-
+        if (this.cookie.getCookie("auto_redirect") === "select") {
+          this.cookie.setCookie('auto_redirect','select_redirect',999);
+          this.redirect(this.cookie.getCookie('lang'))
+        }
+        else if(this.cookie.getCookie('auto_redirect') === "select_redirect"){
+        }
+        else if(this.cookie.getCookie("auto_redirect") === "true"){
         }
         else {
-          switch (this.cookie.getCookie("lang")) {
-            case "en-us":
-              window.location.replace(environment.multiDomain.en);
-              this.cookie.setCookie("auto_jump", "true", 999);
-              break;
-            case "ja-jp":
-              window.location.replace(environment.multiDomain.jp);
-              this.cookie.setCookie("auto_jump", "true", 999);
-              break;
-            case "zh-cn":
-              window.location.replace(environment.multiDomain.cn);
-              this.cookie.setCookie("auto_jump", "true", 999);
-              break;
-            default:
-              window.location.replace(environment.multiDomain.en);
-              this.cookie.setCookie("auto_jump", "true", 999);
-              break;
-          }
+          this.cookie.setCookie("auto_redirect", "true", 999);
+          this.redirect(this.cookie.getCookie("lang"))
         }
       }
     }

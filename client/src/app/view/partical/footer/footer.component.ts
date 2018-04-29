@@ -10,7 +10,6 @@ declare var $:any;
 export class FooterComponent implements OnInit {
 
   constructor(
-    private cookie:CookieService,
     private locale:LocaleService
   ) { }
 
@@ -18,10 +17,7 @@ export class FooterComponent implements OnInit {
   }
 
   selectLang(locale:string):void{
-    this.cookie.deleteCookie();
-    this.cookie.setCookie("lang",locale,9999);
-    this.cookie.setCookie("auto_jump","false",9999);
-    this.locale.onInit();
+    this.locale.selectLang(locale)
   }
 
 }
