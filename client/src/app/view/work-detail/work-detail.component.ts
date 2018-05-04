@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {WorkService} from "../../service/work.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {environment} from "../../../environments/environment";
-import {Meta, Title} from "@angular/platform-browser";
+import {MetaService} from "../../service/meta.service";
 
 @Component({
   selector: 'app-work-detail',
@@ -15,8 +15,7 @@ export class WorkDetailComponent implements OnInit {
     private workService:WorkService,
     private route:ActivatedRoute,
     private router:Router,
-    private titleService:Title,
-    private metaService:Meta
+    private meta:MetaService
   ) { }
 
   workId:string;
@@ -29,11 +28,7 @@ export class WorkDetailComponent implements OnInit {
       .subscribe(data=>{
         if(data.json().success){
           this.workData = data.json().response;
-          this.titleService.setTitle(data.json().response.name+' - Starry Sea Volunteers Association');
-          this.metaService.updateTag({content: environment.apiBase+'/static/work/'+data.json().response.file.cover}, "property='og:image'");
-          this.metaService.updateTag({content: data.json().response.name+' - Starry Sea Volunteers Association'}, "property='og:title'");
-          this.metaService.updateTag({content: data.json().response.summary}, "property='og:description'");
-          this.metaService.updateTag({content: data.json().response.summary}, "name='description'");
+          this.meta.updateTag(data.json().response.name+' - Starry Sea Volunteers Association',data.json().response.summary,environment.apiBase+'/static/work/'+data.json().response.file.cover)
         }else{
           this.router.navigate(['/','404'])
         }
