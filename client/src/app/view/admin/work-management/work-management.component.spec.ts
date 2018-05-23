@@ -4,6 +4,8 @@ import { WorkManagementComponent } from './work-management.component';
 import {HttpModule} from "@angular/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {WorkService} from "../../../service/work.service";
+import {LocaleService} from "../../../service/locale.service";
+import {CookieService} from "../../../service/cookie.service";
 
 describe('WorkManagementComponent', () => {
   let component: WorkManagementComponent;
@@ -13,7 +15,7 @@ describe('WorkManagementComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ WorkManagementComponent ],
       imports:[HttpModule,FormsModule,ReactiveFormsModule],
-      providers:[WorkService]
+      providers:[WorkService,LocaleService,CookieService]
     })
     .compileComponents();
   }));

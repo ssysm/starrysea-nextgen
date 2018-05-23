@@ -5,6 +5,8 @@ import {QaService} from "../../../service/qa.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {TextSlicePipe} from "../../../common/pipe/text-slice.pipe";
+import {LocaleService} from "../../../service/locale.service";
+import {CookieService} from "../../../service/cookie.service";
 
 describe('QaManagementComponent', () => {
   let component: QaManagementComponent;
@@ -13,7 +15,7 @@ describe('QaManagementComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ QaManagementComponent,TextSlicePipe ],
-      providers:[QaService],
+      providers:[QaService,LocaleService,CookieService],
       imports:[FormsModule,ReactiveFormsModule,HttpModule]
     })
     .compileComponents();

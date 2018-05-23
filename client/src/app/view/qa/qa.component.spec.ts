@@ -5,6 +5,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {QaService} from "../../service/qa.service";
 import {SpinnerComponent} from "../partical/spinner/spinner.component";
+import {LocaleService} from "../../service/locale.service";
+import {CookieService} from "../../service/cookie.service";
 
 describe('QaComponent', () => {
   let component: QaComponent;
@@ -14,7 +16,7 @@ describe('QaComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ QaComponent,SpinnerComponent ],
       imports:[FormsModule,ReactiveFormsModule,HttpModule],
-      providers:[QaService]
+      providers:[QaService,LocaleService,CookieService]
     })
     .compileComponents();
   }));

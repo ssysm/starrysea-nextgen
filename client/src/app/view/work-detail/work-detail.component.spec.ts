@@ -5,6 +5,9 @@ import {WorkService} from "../../service/work.service";
 import {HttpModule} from "@angular/http";
 import {RouterTestingModule} from "@angular/router/testing";
 import {SpinnerComponent} from "../partical/spinner/spinner.component";
+import {LocaleService} from "../../service/locale.service";
+import {CookieService} from "../../service/cookie.service";
+import {MetaService} from "../../service/meta.service";
 
 describe('WorkDetailComponent', () => {
   let component: WorkDetailComponent;
@@ -13,7 +16,7 @@ describe('WorkDetailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ WorkDetailComponent,SpinnerComponent ],
-      providers:[WorkService],
+      providers:[WorkService,LocaleService,CookieService,MetaService],
       imports:[HttpModule,RouterTestingModule]
     })
     .compileComponents();
