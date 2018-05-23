@@ -11,7 +11,7 @@
     "build:client": "npm run build --prefix=client",
     "build:docs": "npm run build --prefix=docs",
     "test:docs": "npm run test --prefix=docs",
-    "test:client": "npm run test --prefix=client"
+    "test:client": "npm run test:single --prefix=client"
   },
   "repository": {
     "type": "git",
