@@ -4,6 +4,8 @@ import { ActivityManagementComponent } from './activity-management.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ActivityService} from "../../../service/activity.service";
 import {HttpModule} from "@angular/http";
+import {LocaleService} from "../../../service/locale.service";
+import {CookieService} from "../../../service/cookie.service";
 
 describe('ActivityManagementComponent', () => {
   let component: ActivityManagementComponent;
@@ -13,7 +15,7 @@ describe('ActivityManagementComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ ActivityManagementComponent ],
       imports:[FormsModule,HttpModule,ReactiveFormsModule],
-      providers:[ActivityService]
+      providers:[ActivityService,LocaleService,CookieService]
     })
     .compileComponents();
   }));
