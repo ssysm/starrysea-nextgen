@@ -6,7 +6,7 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "test": "ng test",
-    "test:single": "ng test --single-run",
+    "test:ci": "ng test --watch=false --browsers=\"ChromeHeadless\"",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:lang:cn": "ng build --prod --aot --i18nFile=src/locale/messages.zh-CN.xlf --i18nFormat=xlf --locale=zh-CN",
@@ -35,6 +35,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.0",
+    "@angular-devkit/build-webpack": "0.0.8",
     "@angular/cli": "6.0.0",
     "@angular/compiler-cli": "6.0.0",
     "@angular/language-service": "6.0.0",
@@ -51,11 +52,9 @@
     "karma-jasmine": "^1.1.2",
     "karma-jasmine-html-reporter": "^1.0.0",
     "karma-phantomjs-launcher": "^1.0.4",
-    "phantomjs-prebuilt": "^2.1.16",
     "protractor": "~5.3.1",
-    "puppeteer": "^1.4.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1",
-    "typescript": "2.7.2"
+    "typescript": "^2.8.3"
   }
 }
