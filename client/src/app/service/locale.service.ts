@@ -52,10 +52,10 @@ export class LocaleService {
         break;
     }
   }
-  /*
-   语言选择，只检测初始path
-   @cookie:lang:语言
-   @cookie:auto_redirect:自动跳转(不仅是bool)
+  /**
+   *语言选择，只检测初始path
+   *@cookie:lang:语言
+   *@cookie:auto_redirect:自动跳转(不仅是bool)
    */
   onInit():void {
     if (window.location.pathname === '/') {

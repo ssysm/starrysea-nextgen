@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
 import {Http, RequestOptions} from "@angular/http";
 import {environment} from "../../environments/environment";
-import {LocaleService} from "./locale.service";
 
 @Injectable()
 export class ActivityService {
 
   constructor(
-    private http:Http,
-    private locale:LocaleService
+    private http:Http
   ) { }
 
   fetchActivityList(page:Number,limit:Number){
     return this.http
-      .get(environment.apiBase+'/activity?page='+page+'&limit='+limit+'&locale='+this.locale.getLocale())
+      .get(environment.apiBase+'/activity?page='+page+'&limit='+limit+'&locale='+environment.locale)
   }
 
   getActivity(uid:String){

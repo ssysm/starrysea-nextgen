@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
 import {Http, RequestOptions} from "@angular/http";
 import {environment} from "../../environments/environment";
-import {LocaleService} from "./locale.service";
 
 @Injectable()
 export class WorkService {
 
   constructor(
     private http:Http,
-    private locale:LocaleService
   ) { }
 
   fetchWorkList(page:Number,limit:Number){
     return this.http
-      .get(environment.apiBase+'/work?page='+page+'&limit='+limit+'&locale='+this.locale.getLocale())
+      .get(environment.apiBase+'/work?page='+page+'&limit='+limit+'&locale='+environment.locale)
   }
 
   getWorkDetail(uid:String){

@@ -49,6 +49,78 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ]
+            },
+            "production-cn": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "serviceWorker": true,
+              "ngswConfigPath": "src/ngsw-config.json",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/locale-env/environment.prod.cn.ts"
+                }
+              ],
+              "i18nFile": "src/locale/messages.zh-CN.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "zh-CN",
+              "i18nMissingTranslation": "error",
+              "outputPath": "dist/build-cn/"
+            },
+            "production-jp": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "serviceWorker": true,
+              "ngswConfigPath": "src/ngsw-config.json",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/locale-env/environment.prod.jp.ts"
+                }
+              ],
+              "i18nFile": "src/locale/messages.ja-JP.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "ja-JP",
+              "outputPath": "dist/build-jp/",
+              "i18nMissingTranslation": "error"
+            },
+            "cn": {
+              "aot": true,
+              "i18nFile": "src/locale/messages.zh-CN.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "fr",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/locale-env/environment.cn.ts"
+                }
+              ]
+            },
+            "jp": {
+              "aot": true,
+              "i18nFile": "src/locale/messages.ja-JP.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "ja-JP",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/locale-env/environment.jp.ts"
+                }
+              ]
             }
           }
         },
@@ -60,6 +132,12 @@
           "configurations": {
             "production": {
               "browserTarget": "starrysea-nextgen:build:production"
+            },
+            "cn": {
+              "browserTarget": "starrysea-nextgen:build:cn"
+            },
+            "jp": {
+              "browserTarget": "starrysea-nextgen:build:jp"
             }
           }
         },

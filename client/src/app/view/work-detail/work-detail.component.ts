@@ -19,16 +19,22 @@ export class WorkDetailComponent implements OnInit {
   ) { }
 
   workId:string;
-  workData:Object;
+  workData:any;
   apiBase:string = environment.apiBase;
-  content:String;
+  imageArr: Array<any> = [];
+  imageIndex: number = 0;
+
   ngOnInit() {
     this.workId = this.route.snapshot.params['id'];
     this.workService.getWorkDetail(this.workId)
       .subscribe(data=>{
         if(data.json().success){
           this.workData = data.json().response;
-          this.meta.updateTag(data.json().response.name+' - Starry Sea Volunteers Association',data.json().response.summary,environment.apiBase+'/static/work/'+data.json().response.file.cover)
+          this.meta.updateTag(
+            this.workData.name+' - Starry Sea Volunteers Association',
+            this.workData.summary,
+            environment.apiBase+'/static/work/'+this.workData.file.cover);
+          this.imageArr.push(this.workData.file.images[this.imageIndex]);
         }else{
           this.router.navigate(['/','404'])
         }
@@ -36,4 +42,10 @@ export class WorkDetailComponent implements OnInit {
         this.router.navigate(['/','404'])
       });
   }
+
+  pushImg(){
+    this.imageIndex++;
+    this.imageArr.push(this.workData.file.images[this.imageIndex])
+  }
+
 }

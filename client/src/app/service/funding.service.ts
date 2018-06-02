@@ -8,7 +8,12 @@ export class FundingService {
   constructor(
     private http:Http
   ) { }
-
+  /**
+   * Get All Funding List
+   * @param {String} uid Activity UID
+   * @param {Number} page Page Number
+   * @param {Number} limit result per page
+   * */
   fetchFundingList(uid:String,page:Number,limit:Number){
     return this.http
       .get(environment.apiBase+'/funding/activity?activity_id='+uid+'&page='+page+'&limit='+limit)

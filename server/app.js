@@ -1,31 +1,29 @@
 //Import Dep.
-var express = require('express');
-var path = require('path');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var Ddos = require('ddos');
-var favicon = require('serve-favicon');
+const express = require('express');
+const path = require('path');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const favicon = require('serve-favicon');
+const helmet = require('helmet');
 //Import Routing
-var index = require('./routes/index');
-var users = require('./routes/users');
-var activity = require('./routes/activity');
-var works = require('./routes/works');
-var funding = require('./routes/funding');
-var version = require('./routes/version');
-var qa = require('./routes/qa');
-var config = require('./config');
-//Init Ddos Protection
-var ddos = new Ddos({burst:120, limit:800});
+const index = require('./routes/index');
+const users = require('./routes/users');
+const activity = require('./routes/activity');
+const works = require('./routes/works');
+const funding = require('./routes/funding');
+const version = require('./routes/version');
+const qa = require('./routes/qa');
+const config = require('./config');
 
-var app = express();
+const app = express();
 
 //Init Express Server
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(ddos.express);
+app.use(helmet());
 //Allow CROS
 app.all('*', function(req, res, next) {
     if(config.trustOrigin.includes(req.get('Origin'))) {
@@ -50,7 +48,7 @@ app.use('/version',version);
 app.use('/qa',qa);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  const err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
@@ -59,7 +57,9 @@ app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
-  res.status(err.status || 500).send(err.toString())
+  res
+      .status(err.status || 500)
+      .send(err.message+"\n"+err.stack);
 });
 
 module.exports = app;

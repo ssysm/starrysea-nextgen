@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {AuthService} from "../../service/auth.service";
 import {ActivatedRouteSnapshot, Router, RouterStateSnapshot} from "@angular/router";
-import {Observable} from "rxjs/Observable";
+import {Observable} from "rxjs";
 
 @Injectable()
 export class AdminGuardService {

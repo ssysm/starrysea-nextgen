@@ -14,10 +14,13 @@
     </div>
   </div>
   <hr>
-  <div class="row"  *ngFor="let image of workData.file.images">
+  <div class="row"  *ngFor="let image of imageArr">
     <div class="col-sm-12 text-center">
       <img src="{{apiBase+'/static/work/'+image.filename}}" alt="" class="img-fluid workImg">
     </div>
+  </div>
+  <div class="row">
+    <button style="margin: 0 auto;" class="btn btn-primary" i18n (click)="pushImg()">Load More</button>
   </div>
 </div>
 <app-spinner *ngIf="!workData"></app-spinner>

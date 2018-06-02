@@ -34,33 +34,6 @@
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="14b856e9e1546e5afa9efe172000e4dbbec01590" datatype="html">
-        <source>Works Gallery</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/view/work/work.component.ts</context>
-          <context context-type="linenumber">3</context>
-        </context-group>
-        <note priority="1" from="description">作品展示</note>
-      </trans-unit>
-      <trans-unit id="1801bfa6ba6eb7a02fd61bafb37e35f5d0aebfdc" datatype="html">
-        <source>Learn More</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/view/work/work.component.ts</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/view/activity/activity.component.ts</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-        <note priority="1" from="description">了解更多</note>
-      </trans-unit>
-      <trans-unit id="dd3b6c367381ddfa8f317b8e9b31c55368c65136" datatype="html">
-        <source>Activities</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/view/activity/activity.component.ts</context>
-          <context context-type="linenumber">3</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="4c57ac0d5f8599114795f0b5e6f478befbe15966" datatype="html">
         <source>Work</source>
         <context-group purpose="location">
@@ -84,29 +57,6 @@
           <context context-type="linenumber">16</context>
         </context-group>
         <note priority="1" from="description">关于我们</note>
-      </trans-unit>
-      <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
-        <source>Name</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/view/activity-detail/activity-detail.component.ts</context>
-          <context context-type="linenumber">13</context>
-        </context-group>
-        <note priority="1" from="description">众筹人名字</note>
-      </trans-unit>
-      <trans-unit id="dfc2fb58e2a04ed944a4bd80f0a2087775134068" datatype="html">
-        <source>Amount</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/view/activity-detail/activity-detail.component.ts</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-        <note priority="1" from="description">众筹金额</note>
-      </trans-unit>
-      <trans-unit id="dc75033a5238fdc4f462212c847a45ba8018a3fd" datatype="html">
-        <source>Download</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/view/work-detail/work-detail.component.ts</context>
-          <context context-type="linenumber">11</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="bed551ab9a4aaf06a168844fb03b152fd94c6d7b" datatype="html">
         <source>404
@@ -140,6 +90,13 @@
           <context context-type="linenumber">12</context>
         </context-group>
         <note priority="1" from="description">展示醋图</note>
+      </trans-unit>
+      <trans-unit id="2bee93adbb8cde502af7c2144a0ce0c4c0edf223" datatype="html">
+        <source>©2018-2019 StarrySea</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/view/partical/footer/footer.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="9c4b05b11e6a068d2aa7f18cfd1b0c39c219a3ea" datatype="html">
         <source>
@@ -198,13 +155,6 @@
           <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="2bee93adbb8cde502af7c2144a0ce0c4c0edf223" datatype="html">
-        <source>©2018-2019 StarrySea</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/view/partical/footer/footer.component.ts</context>
-          <context context-type="linenumber">3</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="cb48221f84c43db65fd759e422500f8d183d88f9" datatype="html">
         <source>If you have any questions or any doubt</source>
         <context-group purpose="location">
@@ -249,6 +199,63 @@
           <context context-type="linenumber">24</context>
         </context-group>
         <note priority="1" from="description">已答问题</note>
+      </trans-unit>
+      <trans-unit id="dd3b6c367381ddfa8f317b8e9b31c55368c65136" datatype="html">
+        <source>Activities</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/view/activity/activity.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1801bfa6ba6eb7a02fd61bafb37e35f5d0aebfdc" datatype="html">
+        <source>Learn More</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/view/activity/activity.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/view/work/work.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">了解更多</note>
+      </trans-unit>
+      <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
+        <source>Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/view/activity-detail/activity-detail.component.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <note priority="1" from="description">众筹人名字</note>
+      </trans-unit>
+      <trans-unit id="dfc2fb58e2a04ed944a4bd80f0a2087775134068" datatype="html">
+        <source>Amount</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/view/activity-detail/activity-detail.component.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">众筹金额</note>
+      </trans-unit>
+      <trans-unit id="14b856e9e1546e5afa9efe172000e4dbbec01590" datatype="html">
+        <source>Works Gallery</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/view/work/work.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">作品展示</note>
+      </trans-unit>
+      <trans-unit id="dc75033a5238fdc4f462212c847a45ba8018a3fd" datatype="html">
+        <source>Download</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/view/work-detail/work-detail.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fac040b63c8f3bee626381ab7bf01d61e20843c4" datatype="html">
+        <source>Load More</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/view/work-detail/work-detail.component.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
       </trans-unit>
     </body>
   </file>

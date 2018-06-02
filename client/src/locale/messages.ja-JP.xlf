@@ -256,6 +256,14 @@
           回答した質問
         </target>
       </trans-unit>
+       <trans-unit id="fac040b63c8f3bee626381ab7bf01d61e20843c4" datatype="html">
+              <source>Load More</source>
+              <context-group purpose="location">
+                <context context-type="sourcefile">app/view/work-detail/work-detail.component.ts</context>
+                <context context-type="linenumber">23</context>
+              </context-group>
+              <target>Load More</target>
+            </trans-unit>
     </body>
   </file>
 </xliff>

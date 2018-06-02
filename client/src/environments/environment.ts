@@ -7,6 +7,7 @@ export const environment = {
   production: false,
   apiBase:"http://localhost:3000",
   cookieDomain:"localhost",
+  locale:"en-us",
   multiDomain:{
     en:"http://localhost:4200",
     jp:"http://localhost:4200",
