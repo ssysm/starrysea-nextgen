@@ -9,14 +9,14 @@
           <context context-type="sourcefile">app/view/home/home.component.ts</context>
           <context context-type="linenumber">5</context>
         </context-group>
-        <note priority="1" from="description">首页heading</note><target>僕たちは星の海ボランティアギルド</target>
+        <note priority="1" from="description">首页heading</note><target>わたしたちは星の海志願者チームです</target>
       </trans-unit>
       <trans-unit id="178a996a7933c2d7809c2662ab416d8cd751521c" datatype="html">
         <source>Dedicated to delivering the best of LoveLive Sunshine<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>Aqours events related support</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/home/home.component.ts</context>
           <context context-type="linenumber">9</context>
-        </context-group><target>LoveLive Sunshineの魅力を伝えることに一生懸命頑張ります。</target>
+        </context-group><target>ラブライブ！サンシャイン！！の魅力をとどけて、  Aqoursに応援するめざして</target>
       </trans-unit>
       <trans-unit id="13e017157047cbf1a35692b5e164cbdff7e84ec2" datatype="html">
         <source>
@@ -31,10 +31,12 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/home/home.component.ts</context>
           <context context-type="linenumber">11</context>
-        </context-group><target>星之海的主要工作是为Aqours在国内进行的活动制作callbook、应援物进行免费的发放，并在live时为大家提供力所能及的志愿服务。想要以那“第十人”为目标，努力做到最好！<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+        </context-group><target>コールブックや応援物なと無料放出して
+                                そして、ライブ会場でみんなにポランティアサービを提供しています
+                                「十人目」になりたいんだから、もっともっとがんばります！<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
         <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
         <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
-        <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>关于我们<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
+        <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>わたしたちについて<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
       </trans-unit>
       <trans-unit id="14b856e9e1546e5afa9efe172000e4dbbec01590" datatype="html">
         <source>Works Gallery</source>
@@ -61,7 +63,7 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/activity/activity.component.ts</context>
           <context context-type="linenumber">3</context>
-        </context-group><target>イベントクラウドファンディング</target>
+        </context-group><target>クラウドファンディング</target>
       </trans-unit>
       <trans-unit id="4c57ac0d5f8599114795f0b5e6f478befbe15966" datatype="html">
         <source>Work</source>
@@ -69,7 +71,7 @@
           <context context-type="sourcefile">app/view/partical/navbar/navbar.component.ts</context>
           <context context-type="linenumber">10</context>
         </context-group>
-        <note priority="1" from="description">作品</note><target>作品展示</target>
+        <note priority="1" from="description">作品</note><target>作品を見る</target>
       </trans-unit>
       <trans-unit id="f2005fa461c06dc2e04d8918bbabedf23604b5b7" datatype="html">
         <source>Activity</source>
@@ -85,7 +87,7 @@
           <context context-type="sourcefile">app/view/partical/navbar/navbar.component.ts</context>
           <context context-type="linenumber">16</context>
         </context-group>
-        <note priority="1" from="description">关于我们</note><target>星の海について</target>
+        <note priority="1" from="description">关于我们</note><target>わたしたちについて</target>
       </trans-unit>
       <trans-unit id="cff1428d10d59d14e45edec3c735a27b5482db59" datatype="html">
         <source>Name</source>
@@ -149,7 +151,7 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/about/about.component.ts</context>
           <context context-type="linenumber">5</context>
-        </context-group><target>"麦克风还正常吗？Check，1，2，OK"</target>
+        </context-group><target>“マイクはOK？チェック,1,2,OK.”</target>
       </trans-unit>
       <trans-unit id="acaa73268ddcf1346b59bd9266aa541071b540ad" datatype="html">
         <source>
@@ -163,8 +165,7 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/about/about.component.ts</context>
           <context context-type="linenumber">7</context>
-        </context-group><target>初めまして、僕たちは星の海ボランティアギルド、中国のラブライブイベントを応援して、ラブライブ！サンシャイン!!の魅力をみんなに伝えます！
-  Aqoursの「十」になりたいから、僕たちは自分たちの小さなパワで集めて、Aqours中国イベントのために、コル本、パンフレット、バッジを作た！スクールアイドルの幸せを伝えて、Aqoursを愛する皆様にいい思い出をなりたい！</target>
+        </context-group><target>みんなさんこんにちは、わたしたちは星の海志願者ちーむです。スクールアイドルのみんあ中国でイベントに応援して、みんあさんにラブライブ！サンシャイン！！の魅力をとどけるための団体です！Aqoursの「十人番目」に目指して、わたしたちは自分自身の小さいな力を集まって、中国でAqoursのイベントに数回コールブックや宣伝ハンドブック、バッジなと記念品を作っています。スクールアイドルから暖かい感情に届けたい、スクールアイドルのこと大好きなみんな貴重な思い残したい！</target>
       </trans-unit>
       <trans-unit id="0f95e69d8071c5f6c4dd9934ed6df92c6836562b" datatype="html">
         <source>
@@ -174,7 +175,7 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/about/about.component.ts</context>
           <context context-type="linenumber">15</context>
-        </context-group><target>从组织前身的μ’S Final LoveLive Callbook制作组走来，我们制作了包括但不限于Aqours 的1st 与2nd 的CallBook以及BML-SP的宣传折页和其他相应的纪念徽章在内的应援物，并且还在致力于为大家提供更精美，更多样的纪念品！</target>
+        </context-group><target>わたしたちの前身はミューズさんのFinal LoveLiveコールブックProject、記念品はAqoursのコールブックや宣伝ハンドブック、バッジなとばかりではない、そしてみなさんにいろいろな美しい記念品を届けたい！　</target>
       </trans-unit>
       <trans-unit id="8ae10a8e9e1eec56a78946b0f77ee2f6c0e7f35b" datatype="html">
         <source>
@@ -185,7 +186,7 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/about/about.component.ts</context>
           <context context-type="linenumber">19</context>
-        </context-group><target>制作纪念品时的花销来自于成员们的众筹款，每一次的详细花销我们都记录在册，留下你与我们一同创造的故事的痕迹！我们相信，在大家共同的努力下，我们定能创造出【大家一起实现的崭新的故事】!</target>
+        </context-group><target>記念品作ったお金は志願者のみんなのクラウドファンディングから集まっています。毎回支出は詳しい記録している、君は僕たちといっしょにつくった物語の痕跡のこします！わたしたちはしんじている、みんな協力して、きっと「みんなで叶える新しい物語」を創造します！</target>
       </trans-unit>
       <trans-unit id="04ea7905abbca56fa54c5b7809635a9fd08d28a5" datatype="html">
         <source>Any Questions?</source>
@@ -206,7 +207,7 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/partical/footer/footer.component.ts</context>
           <context context-type="linenumber">3</context>
-        </context-group><target>(c)2018-2019 Starrysea</target>
+        </context-group><target>&copy;2018-2019 Starrysea</target>
       </trans-unit>
       <trans-unit id="cb48221f84c43db65fd759e422500f8d183d88f9" datatype="html">
         <source>If you have any questions or any doubt</source>
@@ -262,7 +263,7 @@
                 <context context-type="sourcefile">app/view/work-detail/work-detail.component.ts</context>
                 <context context-type="linenumber">23</context>
               </context-group>
-              <target>Load More</target>
+              <target>もっと読み込む</target>
             </trans-unit>
     </body>
   </file>
