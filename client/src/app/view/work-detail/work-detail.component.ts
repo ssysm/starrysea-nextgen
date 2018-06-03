@@ -23,6 +23,7 @@ export class WorkDetailComponent implements OnInit {
   apiBase:string = environment.apiBase;
   imageArr: Array<any> = [];
   imageIndex: number = 0;
+  totalImage: number = 0;
 
   ngOnInit() {
     this.workId = this.route.snapshot.params['id'];
@@ -34,6 +35,7 @@ export class WorkDetailComponent implements OnInit {
             this.workData.name+' - Starry Sea Volunteers Association',
             this.workData.summary,
             environment.apiBase+'/static/work/'+this.workData.file.cover);
+          this.totalImage = this.workData.file.images.length-1;
           this.imageArr.push(this.workData.file.images[this.imageIndex]);
         }else{
           this.router.navigate(['/','404'])

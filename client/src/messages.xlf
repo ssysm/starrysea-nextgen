@@ -98,9 +98,9 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="9c4b05b11e6a068d2aa7f18cfd1b0c39c219a3ea" datatype="html">
+      <trans-unit id="f0f302164da282918c1baa6d6be4d49cc6b1f1dc" datatype="html">
         <source>
-    “Is the mic OK? Check,1,2,OK.”</source>
+    “Is the mic working? Check,1,2,OK.”</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/view/about/about.component.ts</context>
           <context context-type="linenumber">5</context>

@@ -19,7 +19,7 @@
       <img src="{{apiBase+'/static/work/'+image.filename}}" alt="" class="img-fluid workImg">
     </div>
   </div>
-  <div class="row">
+  <div class="row" *ngIf="totalImage !== imageIndex">
     <button style="margin: 0 auto;" class="btn btn-primary" i18n (click)="pushImg()">Load More</button>
   </div>
 </div>
