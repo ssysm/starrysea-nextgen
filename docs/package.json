@@ -7,7 +7,7 @@
     "start": "budo src/index.js --serve=bundle.js --live",
     "test": "npm run test-unit && eslint src",
     "test-unit": "mocha --compilers js:babel-register test",
-    "build": "browserify src/index.js | uglifyjs -c -m > bundle.js"
+    "build": "cross-env NODE_ENV=production browserify src/index.js | uglifyjs -c -m > bundle.js"
   },
   "browserify": {
     "transform": [
@@ -56,6 +56,7 @@
   "devDependencies": {
     "babel-register": "^6.3.13",
     "budo": "^10.0.0",
+    "cross-env": "^5.1.6",
     "cz-conventional-changelog": "2.1.0",
     "expect": "^22.0.5",
     "mocha": "^4.0.1",

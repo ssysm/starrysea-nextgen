@@ -4,6 +4,10 @@ const works = require('../../models/Works');
 createWork = (req,res)=>{
     var {locale,name,summary} = req.body;
     "use strict";
+    var imageArr = [];
+    for(let img of req.files['images']){
+        imageArr.push({filename:img.filename});
+    }
     var data = {
         locale,
         name,
@@ -12,7 +16,7 @@ createWork = (req,res)=>{
         file:{
             cover:req.files['cover'][0].filename,
             pdf:req.files['pdf'][0].filename,
-            images:req.files['images']
+            images:imageArr
         },
         view:0
     };
