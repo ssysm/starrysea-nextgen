@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {routeAnimation} from "./common/animation";
 import {LocaleService} from "./service/locale.service";
+import { ConsoleEasterEgg } from './common/console-easter-egg';
 
 @Component({
   selector: 'app-root',
@@ -14,12 +15,15 @@ export class AppComponent implements OnInit{
   constructor(
     private locale:LocaleService
   ){
-
   }
+
+  consoleegg = new ConsoleEasterEgg();
+
 
   ngOnInit(){
     this.loaded = true;
     this.locale.onInit();
+    this.consoleegg.log();
   }
 
   public getRouteAnimation(outlet) {

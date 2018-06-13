@@ -26,7 +26,7 @@ import {MetaService} from "./service/meta.service";
     NavbarComponent,
     NotFoundComponent,
     FooterComponent,
-    SpinnerComponent
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
